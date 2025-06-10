@@ -94,7 +94,7 @@ export const CPSection = () => {
                     <Badge className="bg-yellow-500">GOAT</Badge>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Belarus • Peak CF: 4009 (first >4000) • 2× ICPC Champion • 6× IOI Gold • Multiple GCJ & Hackercup wins
+                    Belarus • Peak CF: 4009 (first {'>'}4000) • 2× ICPC Champion • 6× IOI Gold • Multiple GCJ & Hackercup wins
                   </p>
                 </div>
 
