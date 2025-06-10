@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Trophy, Code, Users, Bot, FileText, Star, TrendingUp, Globe } from "lucide-react";
+import { BookOpen, Trophy, Code, Users, Bot, FileText, Star, TrendingUp, Globe, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { StatsSection } from "@/components/StatsSection";
@@ -11,6 +11,7 @@ import { DSASection } from "@/components/DSASection";
 import { CPSection } from "@/components/CPSection";
 import { CommunitySection } from "@/components/CommunitySection";
 import { Chatbot } from "@/components/Chatbot";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -21,97 +22,108 @@ const Index = () => {
       
       {/* Main Sections */}
       <div className="container mx-auto px-4 py-12 space-y-16">
-        {/* Quick Access Cards */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                  <BookOpen className="h-6 w-6 text-primary" />
+        {/* Quick Access Cards with enhanced clickability */}
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Link to="/dsa-mastery">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30 cursor-pointer h-full">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform">
+                    <BookOpen className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg group-hover:text-primary transition-colors">DSA Mastery</CardTitle>
+                    <CardDescription>Master DSA to Crack Any Interview</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="text-lg">DSA Mastery</CardTitle>
-                  <CardDescription>Master DSA to Crack Any Interview</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Structured semester-wise plan from Arrays to DP
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="secondary">GFG</Badge>
+                  <Badge variant="secondary">TUF</Badge>
+                  <Badge variant="secondary">NeetCode</Badge>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                Structured semester-wise plan from Arrays to DP
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">GFG</Badge>
-                <Badge variant="secondary">TUF</Badge>
-                <Badge variant="secondary">NeetCode</Badge>
-              </div>
-              <Button className="w-full" variant="outline">
-                Start DSA Journey
-              </Button>
-            </CardContent>
-          </Card>
+                <Button className="w-full button-3d bg-gradient-to-r from-primary to-secondary" variant="outline">
+                  Start DSA Journey
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-secondary/20">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors">
-                  <Code className="h-6 w-6 text-secondary" />
+          <Link to="/cp-contributors">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/30 cursor-pointer h-full">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-secondary to-accent rounded-xl group-hover:scale-110 transition-transform">
+                    <Code className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg group-hover:text-secondary transition-colors">Competitive Programming</CardTitle>
+                    <CardDescription>Journey to Legendary Grandmaster</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="text-lg">Competitive Programming</CardTitle>
-                  <CardDescription>Journey to Legendary Grandmaster</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <img 
+                  src="https://i.postimg.cc/hvvcZt8M/Screenshot-2025-06-10-120154.png" 
+                  alt="Blog Preview"
+                  className="w-full h-32 object-cover rounded-lg mb-4"
+                />
+                <p className="text-sm text-muted-foreground mb-4">
+                  From 0 to LGM - Complete CP roadmap for Indians
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="secondary">Codeforces</Badge>
+                  <Badge variant="secondary">AtCoder</Badge>
+                  <Badge variant="secondary">ICPC</Badge>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                From 0 to LGM - Complete CP roadmap for Indians
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">Codeforces</Badge>
-                <Badge variant="secondary">AtCoder</Badge>
-                <Badge variant="secondary">ICPC</Badge>
-              </div>
-              <Button className="w-full" variant="outline">
-                Begin CP Journey
-              </Button>
-            </CardContent>
-          </Card>
+                <Button className="w-full button-3d bg-gradient-to-r from-secondary to-accent" variant="outline">
+                  View Top Contributors
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                  <Trophy className="h-6 w-6 text-accent" />
+          <Link to="/hackathon-guide">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/30 cursor-pointer h-full">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-accent to-primary rounded-xl group-hover:scale-110 transition-transform">
+                    <Trophy className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg group-hover:text-accent transition-colors">Hackathon Guide</CardTitle>
+                    <CardDescription>Unstop Focus & PPI Prep</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="text-lg">Hackathon Guide</CardTitle>
-                  <CardDescription>Unstop Focus & PPI Prep</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Win hackathons and secure PPIs with our guide
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="secondary">Unstop</Badge>
+                  <Badge variant="secondary">Devfolio</Badge>
+                  <Badge variant="secondary">Hack2Skill</Badge>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                Win hackathons and secure PPIs with our guide
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">Unstop</Badge>
-                <Badge variant="secondary">Devfolio</Badge>
-                <Badge variant="secondary">Hack2Skill</Badge>
-              </div>
-              <Button className="w-full" variant="outline">
-                Explore Hackathons
-              </Button>
-            </CardContent>
-          </Card>
+                <Button className="w-full button-3d bg-gradient-to-r from-accent to-primary" variant="outline">
+                  Explore Hackathons
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
+          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30 cursor-pointer h-full">
             <CardHeader className="pb-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                  <Star className="h-6 w-6 text-primary" />
+                <div className="p-3 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform">
+                  <Star className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg">FANG Toolkit</CardTitle>
+                  <CardTitle className="text-lg group-hover:text-primary transition-colors">FANG Toolkit</CardTitle>
                   <CardDescription>Build Like a Pro, Crack Like a Legend</CardDescription>
                 </div>
               </div>
@@ -125,47 +137,49 @@ const Index = () => {
                 <Badge variant="secondary">HLD</Badge>
                 <Badge variant="secondary">System Design</Badge>
               </div>
-              <Button className="w-full" variant="outline">
+              <Button className="w-full button-3d bg-gradient-to-r from-primary to-secondary" variant="outline">
                 Build Projects
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-secondary/20">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors">
-                  <FileText className="h-6 w-6 text-secondary" />
+          <Link to="/resume-tips">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/30 cursor-pointer h-full">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-secondary to-accent rounded-xl group-hover:scale-110 transition-transform">
+                    <FileText className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg group-hover:text-secondary transition-colors">Diamond Resume</CardTitle>
+                    <CardDescription>AI-Powered Resume Analyzer</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="text-lg">Diamond Resume</CardTitle>
-                  <CardDescription>AI-Powered Resume Analyzer</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Tier 2/3 hacks for FANG-ready resumes
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="secondary">ATS Bypass</Badge>
+                  <Badge variant="secondary">Keywords</Badge>
+                  <Badge variant="secondary">Templates</Badge>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                Tier 2/3 hacks for FANG-ready resumes
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary">ATS Bypass</Badge>
-                <Badge variant="secondary">Keywords</Badge>
-                <Badge variant="secondary">Templates</Badge>
-              </div>
-              <Button className="w-full" variant="outline">
-                Analyze Resume
-              </Button>
-            </CardContent>
-          </Card>
+                <Button className="w-full button-3d bg-gradient-to-r from-secondary to-accent" variant="outline">
+                  Analyze Resume
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
 
-          <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20">
+          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/30 cursor-pointer h-full">
             <CardHeader className="pb-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                  <Bot className="h-6 w-6 text-accent" />
+                <div className="p-3 bg-gradient-to-r from-accent to-primary rounded-xl group-hover:scale-110 transition-transform">
+                  <Bot className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg">AI Guide</CardTitle>
+                  <CardTitle className="text-lg group-hover:text-accent transition-colors">AI Guide</CardTitle>
                   <CardDescription>Personal Coding Companion</CardDescription>
                 </div>
               </div>
@@ -179,7 +193,7 @@ const Index = () => {
                 <Badge variant="secondary">Problem Rec</Badge>
                 <Badge variant="secondary">24/7 Support</Badge>
               </div>
-              <Button className="w-full" variant="outline">
+              <Button className="w-full button-3d bg-gradient-to-r from-accent to-primary" variant="outline">
                 Chat with AI
               </Button>
             </CardContent>
@@ -189,6 +203,29 @@ const Index = () => {
         <DSASection />
         <CPSection />
         <CommunitySection />
+        
+        {/* Resources Section Link */}
+        <section className="text-center">
+          <Link to="/resources">
+            <Card className="card-3d glass-morphism border-2 border-primary/20 p-12 cursor-pointer hover:border-primary/40 transition-all">
+              <CardContent className="pt-0">
+                <div className="floating-3d mb-6">
+                  <Globe className="h-16 w-16 text-primary mx-auto" />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">
+                  Explore All Resources
+                </h3>
+                <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Comprehensive collection of competitive programming resources, tutorials, and practice platforms
+                </p>
+                <Button size="lg" className="button-3d bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent text-lg px-8 py-4">
+                  <ExternalLink className="h-5 w-5 mr-2" />
+                  View All Resources
+                </Button>
+              </CardContent>
+            </Card>
+          </Link>
+        </section>
       </div>
       
       <Chatbot />
