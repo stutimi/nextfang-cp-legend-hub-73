@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,9 +11,10 @@ const cpLegends = [
     article: "https://codeforces.com/blog/entry/73894",
     rank: 1,
     title: "GOAT",
-    description: "Belarus • Peak CF: 4009 (first >4000) • 2× ICPC Champion • 6× IOI Gold • Multiple GCJ & Hackercup wins",
+    description: "Youngest-ever IOI gold medalist (2012); 5× Codeforces World Champion; multiple ACM ICPC finals and Topcoder Open champion. Leads algorithm research at Google Research.",
     gradient: "from-primary/20 to-accent/20",
-    borderColor: "border-primary/40"
+    borderColor: "border-primary/40",
+    image: "https://i.postimg.cc/Sx3FTRv5/Screenshot-2025-06-10-150038.png"
   },
   {
     name: "Petr Mitrichev",
@@ -23,42 +23,99 @@ const cpLegends = [
     article: "https://codeforces.com/blog/entry/16517",
     rank: 2,
     title: "Legend",
-    description: "Russia • GCJ 2006 • 3× Hackercup • 4× TCO Algorithm • 2× IOI medals • ICPC Finals 2nd",
+    description: "Multiple Topcoder Open victories; winner at IOI and numerous Codeforces marathons. Senior Algorithm Engineer at Google.",
     gradient: "from-muted/20 to-secondary/20",
-    borderColor: "border-muted/40"
+    borderColor: "border-muted/40",
+    image: "https://i.postimg.cc/k41DhYjJ/Screenshot-2025-06-10-150353.png"
   },
   {
-    name: "Makoto \"rng_58\" Soejima",
+    name: "Benq (Benjamin Qi)",
     country: "Japan",
     flag: "🇯🇵", 
     article: "https://codeforces.com/blog/entry/15547",
     rank: 3,
     title: "Master",
-    description: "Japan • GCJ & Hackercup winner • Perfect IMO gold • One of only 3 to hold all major titles",
+    description: "Dominant on platforms like Codeforces and AtCoder; frequent GYM victor. Software engineer at a top-tier tech firm.",
     gradient: "from-accent/20 to-primary/20",
-    borderColor: "border-accent/40"
+    borderColor: "border-accent/40",
+    image: "https://i.postimg.cc/9Qw7v2TD/883337-vertical-japanese-flag-wallpapers-1920x1200.jpg"
   },
   {
-    name: "Tiancheng \"ACRush\" Lou",
-    country: "China",
-    flag: "🇨🇳",
+    name: "ecnerwala (Brian Dean)",
+    country: "USA",
+    flag: "🇺🇸",
     article: "https://codeforces.com/blog/entry/16004",
     rank: 4,
     title: "Icon",
-    description: "China • 2× GCJ Champion (2008, 2009) • TCO Marathon winner • IOI gold • China's legend",
+    description: "Consistently ranked top across Codeforces, AtCoder, Topcoder. Researcher in formal verification / proof assistants.",
     gradient: "from-primary/20 to-secondary/20",
-    borderColor: "border-primary/40"
+    borderColor: "border-primary/40",
+    image: "https://i.postimg.cc/Vk9D3XXr/unnamed.jpg"
   },
   {
-    name: "Jakub \"meret\" Pachocki",
-    country: "Poland",
-    flag: "🇵🇱",
+    name: "rng_58 (Petr Evdakov)",
+    country: "Japan",
+    flag: "🇯🇵",
     article: "https://codeforces.com/blog/entry/15683", 
     rank: 5,
     title: "Genius",
-    description: "Poland • 2012 GCJ Champion • IOI silver • ICPC gold • Now Chief Scientist at OpenAI",
+    description: "High-ranking coder on Codeforces and AtCoder. Engineer role at a leading company. Active in algorithmic research.",
     gradient: "from-secondary/20 to-accent/20",
-    borderColor: "border-secondary/40"
+    borderColor: "border-secondary/40",
+    image: "https://i.postimg.cc/6qh4wVfq/flag-japan-527804-853.avif"
+  }
+];
+
+const topIndianProgrammers = [
+  {
+    name: "Harsha \"humblefool\" Suryanarayana",
+    handle: "humblefool",
+    platform: "Topcoder",
+    rank: "🥇 Legend",
+    description: "First Indian in Google Code Jam Final (2008); two-time Topcoder Open finalist; highest-rated Indian coder at his time. Revered as \"India's greatest coder.\"",
+    country: "🇮🇳",
+    image: "https://i.postimg.cc/d0p5TCZ4/maxresdefault-2.jpg",
+    flagImage: "https://i.postimg.cc/qMG0XJL8/t-500x300-3.jpg"
+  },
+  {
+    name: "Utkarsh Gupta (demoralizer)",
+    handle: "demoralizer",
+    platform: "Codeforces",
+    rank: "🥈 Grandmaster",
+    description: "International Grandmaster on Codeforces; peak 2500+. India's top in multiple Google Kick Start events; Code Jam finalist. Engineer at Google.",
+    country: "🇮🇳",
+    image: "https://i.postimg.cc/j26Vcbpw/unnamed-1.jpg",
+    flagImage: "https://i.postimg.cc/qMG0XJL8/t-500x300-3.jpg"
+  },
+  {
+    name: "Priyansh Agarwal",
+    handle: "priyansh31dec",
+    platform: "CodeChef",
+    rank: "🥉 Master",
+    description: "6★ on CodeChef; Master on Codeforces. ICPC World Finalist; achieved All‑India #1 in Google Kick Start. Creates CP tutorials.",
+    country: "🇮🇳",
+    image: "https://i.postimg.cc/fR3qCZnH/Fv-H-JWGa-IAE5-Nt-F.jpg",
+    flagImage: "https://i.postimg.cc/qMG0XJL8/t-500x300-3.jpg"
+  },
+  {
+    name: "Udit Sanghi",
+    handle: "udit_sanghi",
+    platform: "Codeforces",
+    rank: "🏅 Red Coder",
+    description: "Silver medal at IOI 2020; bronze at APIO 2020. ~2476 rating — youngest Red Coder in India. Considered a future star.",
+    country: "🇮🇳",
+    image: "https://i.postimg.cc/NG203Cq5/udit-sanghi.jpg",
+    flagImage: "https://i.postimg.cc/qMG0XJL8/t-500x300-3.jpg"
+  },
+  {
+    name: "Kshitij Sodani",
+    handle: "kshitij_sodani",
+    platform: "CodeChef",
+    rank: "🏅 Rising Star",
+    description: "Bronze at IOI 2020; represented India at IOI 2021. Held India's #1 on CodeChef Junior; India #2 on CF (rating ~2619). Heading to MIT.",
+    country: "🇮🇳",
+    image: "https://i.postimg.cc/Y28hfLHx/th-1.jpg",
+    flagImage: "https://i.postimg.cc/qMG0XJL8/t-500x300-3.jpg"
   }
 ];
 
@@ -93,12 +150,12 @@ export const CPSection = () => {
   return (
     <section id="cp" className="py-20 relative overflow-hidden">
       {/* Background with 3D elements */}
-      <div className="absolute inset-0 hero-bg opacity-10"></div>
+      <div className="absolute inset-0 virtual-stage opacity-20"></div>
       <div className="absolute top-20 left-10 floating-3d">
-        <div className="w-20 h-20 bg-gradient-to-r from-primary to-accent rounded-full opacity-20"></div>
+        <div className="w-20 h-20 bg-gradient-to-r from-primary to-accent rounded-full opacity-30"></div>
       </div>
       <div className="absolute bottom-20 right-10 floating-3d" style={{animationDelay: '2s'}}>
-        <div className="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full opacity-20"></div>
+        <div className="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full opacity-30"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -112,8 +169,15 @@ export const CPSection = () => {
         </div>
 
         {/* Origins & Evolution Section with stunning design */}
-        <Card className="mb-16 card-3d glass-morphism border-2 border-primary/20 overflow-hidden">
-          <CardHeader className="relative">
+        <Card className="mb-16 card-3d glass-morphism border-2 border-primary/20 overflow-hidden relative">
+          <div className="absolute inset-0 opacity-10">
+            <img 
+              src="https://i.postimg.cc/XYwYDr5q/61cc8a91532d9e30a0f7d49a-the-evolution-of-programming.png" 
+              alt="Evolution of Programming"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <CardHeader className="relative z-10">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full -translate-y-16 translate-x-16"></div>
             <div className="flex items-center gap-3 relative z-10">
               <div className="p-3 bg-gradient-to-r from-primary to-accent rounded-xl pulse-3d">
@@ -129,11 +193,11 @@ export const CPSection = () => {
               </div>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {evolutionTimeline.map((era, index) => (
                 <div key={era.period} className="slide-in-3d" style={{animationDelay: `${index * 0.2}s`}}>
-                  <div className={`p-6 rounded-2xl bg-gradient-to-br ${era.gradient} border border-white/10 card-3d h-full`}>
+                  <div className={`p-6 rounded-2xl bg-gradient-to-br ${era.gradient} border border-white/20 card-3d h-full`}>
                     <div className="font-bold text-lg text-primary mb-2">🧬 {era.period}</div>
                     <div className="font-semibold text-foreground mb-2">{era.title}</div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -183,6 +247,11 @@ export const CPSection = () => {
                     </div>
                     
                     <div className="space-y-4">
+                      <img 
+                        src={legend.image} 
+                        alt={legend.name}
+                        className="w-full h-32 object-cover rounded-lg"
+                      />
                       <h3 className="font-bold text-xl text-foreground">{legend.name}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {legend.description}
@@ -200,6 +269,52 @@ export const CPSection = () => {
                         </Button>
                       </a>
                     </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Top Indian Programmers Section */}
+        <Card className="mb-16 card-3d glass-morphism border-2 border-accent/20 overflow-hidden">
+          <CardHeader className="relative">
+            <div className="flex items-center gap-3">
+              <div className="p-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl pulse-3d">
+                <Trophy className="h-8 w-8 text-white" />
+              </div>
+              <div>
+                <CardTitle className="text-3xl md:text-4xl text-gradient">
+                  🇮🇳 Top 5 Indian Competitive Programmers
+                </CardTitle>
+                <CardDescription className="text-lg mt-2">
+                  India's finest competitive programming talents leading the way
+                </CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {topIndianProgrammers.map((programmer, index) => (
+                <div key={programmer.name} className="slide-in-3d" style={{animationDelay: `${index * 0.15}s`}}>
+                  <div className="legend-card p-6 bg-gradient-to-br from-orange-500/20 to-red-500/20 border-orange-500/30 border-2">
+                    <div className="flex items-center gap-2 mb-4">
+                      <img 
+                        src={programmer.flagImage} 
+                        alt="India Flag"
+                        className="w-8 h-6 object-cover rounded"
+                      />
+                      <Badge className="bg-gradient-to-r from-orange-500 to-red-500">#{index + 1}</Badge>
+                    </div>
+                    <img 
+                      src={programmer.image} 
+                      alt={programmer.name}
+                      className="w-full h-32 object-cover rounded-lg mb-4"
+                    />
+                    <h3 className="font-bold text-xl mb-2">{programmer.name}</h3>
+                    <div className="text-sm text-muted-foreground mb-2">@{programmer.handle}</div>
+                    <Badge variant="secondary" className="mb-3">{programmer.rank}</Badge>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{programmer.description}</p>
                   </div>
                 </div>
               ))}

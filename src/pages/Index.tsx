@@ -38,6 +38,11 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
+                <img 
+                  src="https://i.postimg.cc/SN9W2vpM/Screenshot-2025-06-10-134124.png" 
+                  alt="DSA Mastery"
+                  className="w-full h-32 object-cover rounded-lg mb-4"
+                />
                 <p className="text-sm text-muted-foreground mb-4">
                   Structured semester-wise plan from Arrays to DP
                 </p>
@@ -45,6 +50,7 @@ const Index = () => {
                   <Badge variant="secondary">GFG</Badge>
                   <Badge variant="secondary">TUF</Badge>
                   <Badge variant="secondary">NeetCode</Badge>
+                  <Badge variant="secondary">CodingNinja</Badge>
                 </div>
                 <Button className="w-full button-3d bg-gradient-to-r from-primary to-secondary" variant="outline">
                   Start DSA Journey
@@ -68,8 +74,8 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <img 
-                  src="https://i.postimg.cc/hvvcZt8M/Screenshot-2025-06-10-120154.png" 
-                  alt="Blog Preview"
+                  src="https://i.postimg.cc/Zn0PfMSZ/Screenshot-2025-06-10-213117.png" 
+                  alt="Competitive Programming"
                   className="w-full h-32 object-cover rounded-lg mb-4"
                 />
                 <p className="text-sm text-muted-foreground mb-4">
@@ -101,6 +107,11 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
+                <img 
+                  src="https://i.postimg.cc/sg9rfnk3/hackathon.webp" 
+                  alt="Hackathon Guide"
+                  className="w-full h-32 object-cover rounded-lg mb-4"
+                />
                 <p className="text-sm text-muted-foreground mb-4">
                   Win hackathons and secure PPIs with our guide
                 </p>
@@ -129,6 +140,11 @@ const Index = () => {
               </div>
             </CardHeader>
             <CardContent>
+              <img 
+                src="https://i.postimg.cc/fWp52mHs/th.jpg" 
+                alt="FANG Toolkit"
+                className="w-full h-32 object-cover rounded-lg mb-4"
+              />
               <p className="text-sm text-muted-foreground mb-4">
                 FANG-ready projects and interview preparation
               </p>
@@ -157,6 +173,11 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
+                <img 
+                  src="https://i.postimg.cc/5NqJf4QX/infographic-resume-template-header.png" 
+                  alt="Diamond Resume"
+                  className="w-full h-32 object-cover rounded-lg mb-4"
+                />
                 <p className="text-sm text-muted-foreground mb-4">
                   Tier 2/3 hacks for FANG-ready resumes
                 </p>
@@ -193,7 +214,16 @@ const Index = () => {
                 <Badge variant="secondary">Problem Rec</Badge>
                 <Badge variant="secondary">24/7 Support</Badge>
               </div>
-              <Button className="w-full button-3d bg-gradient-to-r from-accent to-primary" variant="outline">
+              <Button 
+                className="w-full button-3d bg-gradient-to-r from-accent to-primary" 
+                variant="outline"
+                onClick={() => {
+                  const chatbot = document.querySelector('[data-chatbot]');
+                  if (chatbot) {
+                    chatbot.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Chat with AI
               </Button>
             </CardContent>
@@ -228,7 +258,9 @@ const Index = () => {
         </section>
       </div>
       
-      <Chatbot />
+      <div data-chatbot>
+        <Chatbot />
+      </div>
     </div>
   );
 };
