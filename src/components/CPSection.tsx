@@ -9,61 +9,56 @@ const cpLegends = [
     name: "Gennady \"tourist\" Korotkevich",
     country: "Belarus",
     flag: "🇧🇾",
-    image: "https://i.postimg.cc/90y5BtPG/Screenshot-2025-06-10-150038.png",
     article: "https://codeforces.com/blog/entry/73894",
     rank: 1,
     title: "GOAT",
     description: "Belarus • Peak CF: 4009 (first >4000) • 2× ICPC Champion • 6× IOI Gold • Multiple GCJ & Hackercup wins",
-    gradient: "from-yellow-500/20 to-yellow-600/20",
-    borderColor: "border-yellow-500/40"
+    gradient: "from-primary/20 to-accent/20",
+    borderColor: "border-primary/40"
   },
   {
     name: "Petr Mitrichev",
     country: "Russia", 
     flag: "🇷🇺",
-    image: "https://i.postimg.cc/SR1TCn3W/Screenshot-2025-06-10-150353.png",
     article: "https://codeforces.com/blog/entry/16517",
     rank: 2,
     title: "Legend",
     description: "Russia • GCJ 2006 • 3× Hackercup • 4× TCO Algorithm • 2× IOI medals • ICPC Finals 2nd",
-    gradient: "from-gray-400/20 to-gray-500/20",
-    borderColor: "border-gray-400/40"
+    gradient: "from-muted/20 to-secondary/20",
+    borderColor: "border-muted/40"
   },
   {
     name: "Makoto \"rng_58\" Soejima",
     country: "Japan",
     flag: "🇯🇵", 
-    image: "https://i.postimg.cc/tRzYJsmZ/Screenshot-2025-06-10-123051.png",
     article: "https://codeforces.com/blog/entry/15547",
     rank: 3,
     title: "Master",
     description: "Japan • GCJ & Hackercup winner • Perfect IMO gold • One of only 3 to hold all major titles",
-    gradient: "from-orange-400/20 to-orange-500/20",
-    borderColor: "border-orange-400/40"
+    gradient: "from-accent/20 to-primary/20",
+    borderColor: "border-accent/40"
   },
   {
     name: "Tiancheng \"ACRush\" Lou",
     country: "China",
     flag: "🇨🇳",
-    image: "https://i.postimg.cc/ZqDx1f6m/Screenshot-2025-06-10-122923.png", 
     article: "https://codeforces.com/blog/entry/16004",
     rank: 4,
     title: "Icon",
     description: "China • 2× GCJ Champion (2008, 2009) • TCO Marathon winner • IOI gold • China's legend",
-    gradient: "from-red-400/20 to-red-500/20",
-    borderColor: "border-red-400/40"
+    gradient: "from-primary/20 to-secondary/20",
+    borderColor: "border-primary/40"
   },
   {
     name: "Jakub \"meret\" Pachocki",
     country: "Poland",
     flag: "🇵🇱",
-    image: "https://i.postimg.cc/SKtny3ZZ/Screenshot-2025-06-10-122544.png",
     article: "https://codeforces.com/blog/entry/15683", 
     rank: 5,
     title: "Genius",
     description: "Poland • 2012 GCJ Champion • IOI silver • ICPC gold • Now Chief Scientist at OpenAI",
-    gradient: "from-blue-400/20 to-blue-500/20",
-    borderColor: "border-blue-400/40"
+    gradient: "from-secondary/20 to-accent/20",
+    borderColor: "border-secondary/40"
   }
 ];
 
@@ -72,29 +67,25 @@ const evolutionTimeline = [
     period: "1970s-1980s",
     title: "The Birth",
     description: "ACM ICPC (1970) started at Texas A&M, grew international by 1980s using Pascal, Fortran, and C",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=200&fit=crop",
-    gradient: "from-blue-500/20 to-purple-500/20"
+    gradient: "from-primary/20 to-accent/20"
   },
   {
     period: "1990s", 
     title: "Academic Growth",
     description: "ICPC became prestigious, top universities started training teams, early Online Judges appeared (PKU, UVa)",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop",
-    gradient: "from-purple-500/20 to-pink-500/20"
+    gradient: "from-accent/20 to-secondary/20"
   },
   {
     period: "2000s",
     title: "Online Revolution", 
     description: "TopCoder (2001), Codeforces (2009), CodeChef (2009) revolutionized CP with online contests and rating systems",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop",
-    gradient: "from-green-500/20 to-teal-500/20"
+    gradient: "from-secondary/20 to-muted/20"
   },
   {
     period: "2010s-2020s",
     title: "Globalization",
     description: "Google Code Jam, Facebook Hacker Cup, educational content, and global participation explosion",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=200&fit=crop",
-    gradient: "from-cyan-500/20 to-blue-500/20"
+    gradient: "from-muted/20 to-primary/20"
   }
 ];
 
@@ -123,10 +114,10 @@ export const CPSection = () => {
         {/* Origins & Evolution Section with stunning design */}
         <Card className="mb-16 card-3d glass-morphism border-2 border-primary/20 overflow-hidden">
           <CardHeader className="relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full -translate-y-16 translate-x-16 rotate-3d"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full -translate-y-16 translate-x-16"></div>
             <div className="flex items-center gap-3 relative z-10">
               <div className="p-3 bg-gradient-to-r from-primary to-accent rounded-xl pulse-3d">
-                <History className="h-8 w-8 text-white" />
+                <History className="h-8 w-8 text-background" />
               </div>
               <div>
                 <CardTitle className="text-3xl md:text-4xl text-gradient">
@@ -142,12 +133,7 @@ export const CPSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {evolutionTimeline.map((era, index) => (
                 <div key={era.period} className="slide-in-3d" style={{animationDelay: `${index * 0.2}s`}}>
-                  <div className={`p-6 rounded-2xl bg-gradient-to-br ${era.gradient} border border-white/20 card-3d h-full`}>
-                    <img 
-                      src={era.image} 
-                      alt={era.title}
-                      className="w-full h-32 object-cover rounded-lg mb-4"
-                    />
+                  <div className={`p-6 rounded-2xl bg-gradient-to-br ${era.gradient} border border-white/10 card-3d h-full`}>
                     <div className="font-bold text-lg text-primary mb-2">🧬 {era.period}</div>
                     <div className="font-semibold text-foreground mb-2">{era.title}</div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -166,7 +152,7 @@ export const CPSection = () => {
             <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-full -translate-y-20 -translate-x-20 floating-3d"></div>
             <div className="flex items-center gap-3 relative z-10">
               <div className="p-3 bg-gradient-to-r from-secondary to-accent rounded-xl pulse-3d">
-                <Star className="h-8 w-8 text-white" />
+                <Star className="h-8 w-8 text-background" />
               </div>
               <div>
                 <CardTitle className="text-3xl md:text-4xl text-gradient">
@@ -183,27 +169,21 @@ export const CPSection = () => {
               {cpLegends.map((legend, index) => (
                 <div key={legend.name} className="slide-in-3d" style={{animationDelay: `${index * 0.15}s`}}>
                   <div className={`legend-card p-6 bg-gradient-to-br ${legend.gradient} ${legend.borderColor} border-2`}>
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-6">
                       <div className="flex items-center gap-2">
-                        <Trophy className="h-6 w-6 text-yellow-500" />
+                        <Trophy className="h-6 w-6 text-primary" />
                         <span className="text-2xl font-bold">#{legend.rank}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-2xl">{legend.flag}</span>
-                        <Badge className="bg-gradient-to-r from-primary to-secondary text-white">
+                        <Badge className="bg-gradient-to-r from-primary to-accent text-background">
                           {legend.title}
                         </Badge>
                       </div>
                     </div>
                     
-                    <img 
-                      src={legend.image} 
-                      alt={legend.name}
-                      className="w-full h-48 object-cover rounded-xl mb-4 card-3d"
-                    />
-                    
-                    <div className="space-y-3">
-                      <h3 className="font-bold text-lg text-foreground">{legend.name}</h3>
+                    <div className="space-y-4">
+                      <h3 className="font-bold text-xl text-foreground">{legend.name}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {legend.description}
                       </p>
@@ -214,7 +194,7 @@ export const CPSection = () => {
                         rel="noopener noreferrer"
                         className="block"
                       >
-                        <Button className="w-full gap-2 button-3d bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent">
+                        <Button className="w-full gap-2 button-3d bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-background">
                           <BookOpen className="h-4 w-4" />
                           Read Article
                         </Button>
@@ -232,7 +212,7 @@ export const CPSection = () => {
           <CardHeader>
             <div className="flex items-center gap-3">
               <div className="p-3 bg-gradient-to-r from-accent to-primary rounded-xl pulse-3d">
-                <Trophy className="h-8 w-8 text-white" />
+                <Trophy className="h-8 w-8 text-background" />
               </div>
               <div>
                 <CardTitle className="text-3xl md:text-4xl text-gradient">
@@ -247,7 +227,7 @@ export const CPSection = () => {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <h3 className="font-bold text-2xl text-red-600">🚫 Current Problems:</h3>
+                <h3 className="font-bold text-2xl text-red-400">🚫 Current Problems:</h3>
                 <div className="space-y-4">
                   {[
                     { title: "Lack of Structured Guidance", desc: "No clear roadmap from 0 to LGM for Indian students" },
@@ -256,7 +236,7 @@ export const CPSection = () => {
                     { title: "No Indian LGM Yet", desc: "India hasn't produced a Legendary Grandmaster on Codeforces" }
                   ].map((problem, index) => (
                     <div key={problem.title} className="card-3d p-4 bg-red-500/10 rounded-xl border border-red-500/20">
-                      <div className="font-medium text-red-700">{problem.title}</div>
+                      <div className="font-medium text-red-400">{problem.title}</div>
                       <div className="text-sm text-muted-foreground mt-1">{problem.desc}</div>
                     </div>
                   ))}
@@ -264,7 +244,7 @@ export const CPSection = () => {
               </div>
               
               <div className="space-y-6">
-                <h3 className="font-bold text-2xl text-green-600">✅ NEXTFANG Solutions:</h3>
+                <h3 className="font-bold text-2xl text-green-400">✅ NEXTFANG Solutions:</h3>
                 <div className="space-y-4">
                   {[
                     { title: "Centralized Learning Hub", desc: "All resources, roadmaps, and tools in one place" },
@@ -273,7 +253,7 @@ export const CPSection = () => {
                     { title: "LGM Mission", desc: "Dedicated mission to create India's first LGM" }
                   ].map((solution, index) => (
                     <div key={solution.title} className="card-3d p-4 bg-green-500/10 rounded-xl border border-green-500/20">
-                      <div className="font-medium text-green-700">{solution.title}</div>
+                      <div className="font-medium text-green-400">{solution.title}</div>
                       <div className="text-sm text-muted-foreground mt-1">{solution.desc}</div>
                     </div>
                   ))}
@@ -301,7 +281,7 @@ export const CPSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <Button size="lg" className="button-3d bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent text-lg px-8 py-4">
+                <Button size="lg" className="button-3d bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-background text-lg px-8 py-4">
                   <ExternalLink className="h-5 w-5 mr-2" />
                   Start Your CP Journey
                 </Button>

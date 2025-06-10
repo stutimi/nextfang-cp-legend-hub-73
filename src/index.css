@@ -7,83 +7,83 @@
 
 @layer base {
   :root {
-    --background: 240 100% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 6% 8%; /* Dark background inspired by the portfolio */
+    --foreground: 240 5% 95%;
 
-    --card: 240 100% 99%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 6% 10%;
+    --card-foreground: 240 5% 95%;
 
-    --popover: 240 100% 99%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 240 5% 95%;
 
-    --primary: 217 91% 35%; /* Dark blue */
-    --primary-foreground: 210 40% 98%;
+    --primary: 14 100% 57%; /* Orange accent */
+    --primary-foreground: 240 6% 8%;
 
-    --secondary: 217 91% 70%; /* Light blue */
-    --secondary-foreground: 217 91% 15%;
+    --secondary: 240 6% 15%; /* Darker gray */
+    --secondary-foreground: 240 5% 95%;
 
-    --muted: 217 50% 90%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 4% 65%;
 
-    --accent: 197 71% 73%; /* Sky blue */
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 100% 70%; /* Yellow accent */
+    --accent-foreground: 240 6% 8%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 240 5% 95%;
 
-    --border: 217 32% 85%;
-    --input: 217 32% 85%;
-    --ring: 217 91% 35%;
+    --border: 240 6% 20%;
+    --input: 240 6% 15%;
+    --ring: 14 100% 57%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 240 100% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 217 91% 35%;
-    --sidebar-primary-foreground: 240 100% 98%;
-    --sidebar-accent: 217 50% 95%;
-    --sidebar-accent-foreground: 217 91% 15%;
-    --sidebar-border: 217 32% 85%;
-    --sidebar-ring: 217 91% 59.8%;
+    --sidebar-background: 240 6% 8%;
+    --sidebar-foreground: 240 5% 90%;
+    --sidebar-primary: 14 100% 57%;
+    --sidebar-primary-foreground: 240 6% 8%;
+    --sidebar-accent: 240 6% 12%;
+    --sidebar-accent-foreground: 240 5% 90%;
+    --sidebar-border: 240 6% 20%;
+    --sidebar-ring: 14 100% 57%;
   }
 
   .dark {
-    --background: 217 91% 8%;
-    --foreground: 210 40% 98%;
+    --background: 240 6% 8%;
+    --foreground: 240 5% 95%;
 
-    --card: 217 91% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 6% 10%;
+    --card-foreground: 240 5% 95%;
 
-    --popover: 217 91% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 240 5% 95%;
 
-    --primary: 197 71% 73%;
-    --primary-foreground: 217 91% 8%;
+    --primary: 14 100% 57%;
+    --primary-foreground: 240 6% 8%;
 
-    --secondary: 217 91% 20%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 6% 15%;
+    --secondary-foreground: 240 5% 95%;
 
-    --muted: 217 32% 15%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 4% 65%;
 
-    --accent: 217 91% 70%;
-    --accent-foreground: 217 91% 8%;
+    --accent: 45 100% 70%;
+    --accent-foreground: 240 6% 8%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 240 5% 95%;
 
-    --border: 217 32% 17.5%;
-    --input: 217 32% 17.5%;
-    --ring: 197 71% 73%;
+    --border: 240 6% 20%;
+    --input: 240 6% 15%;
+    --ring: 14 100% 57%;
 
-    --sidebar-background: 217 91% 8%;
-    --sidebar-foreground: 210 40% 95%;
-    --sidebar-primary: 197 71% 73%;
-    --sidebar-primary-foreground: 217 91% 8%;
-    --sidebar-accent: 217 32% 15%;
-    --sidebar-accent-foreground: 210 40% 95%;
-    --sidebar-border: 217 32% 15%;
-    --sidebar-ring: 197 71% 73%;
+    --sidebar-background: 240 6% 8%;
+    --sidebar-foreground: 240 5% 90%;
+    --sidebar-primary: 14 100% 57%;
+    --sidebar-primary-foreground: 240 6% 8%;
+    --sidebar-accent: 240 6% 12%;
+    --sidebar-accent-foreground: 240 5% 90%;
+    --sidebar-border: 240 6% 20%;
+    --sidebar-ring: 14 100% 57%;
   }
 }
 
@@ -98,7 +98,7 @@
   }
 }
 
-/* Advanced 3D Animation Utilities */
+/* Enhanced 3D Animation Utilities without rotation */
 @layer utilities {
   .card-3d {
     transform-style: preserve-3d;
@@ -114,7 +114,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.1));
+    background: linear-gradient(135deg, rgba(255, 138, 76, 0.1), rgba(255, 193, 7, 0.1));
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -125,20 +125,15 @@
   }
   
   .card-3d:hover {
-    transform: perspective(1000px) rotateX(8deg) rotateY(8deg) translateZ(30px) scale(1.02);
+    transform: translateZ(30px) scale(1.02);
     box-shadow: 
-      0 25px 50px rgba(59, 130, 246, 0.25),
-      0 12px 24px rgba(59, 130, 246, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      0 25px 50px rgba(255, 138, 76, 0.25),
+      0 12px 24px rgba(255, 138, 76, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .floating-3d {
     animation: floating3d 6s ease-in-out infinite;
-    transform-style: preserve-3d;
-  }
-
-  .rotate-3d {
-    animation: rotate3d 20s linear infinite;
     transform-style: preserve-3d;
   }
 
@@ -152,9 +147,9 @@
 
   .hero-bg {
     background: linear-gradient(135deg, 
-      hsl(var(--primary)) 0%, 
+      hsl(var(--background)) 0%, 
       hsl(var(--secondary)) 35%, 
-      hsl(var(--accent)) 100%);
+      hsl(var(--muted)) 100%);
     position: relative;
     overflow: hidden;
   }
@@ -166,14 +161,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff8a4c' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     animation: patternMove 20s linear infinite;
   }
 
   .glass-morphism {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .text-gradient {
@@ -190,25 +185,25 @@
   }
 
   .button-3d:hover {
-    transform: translateY(-4px) rotateX(15deg);
-    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(255, 138, 76, 0.4);
   }
 
   .legend-card {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .legend-card:hover {
-    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    transform: translateY(-10px);
     box-shadow: 
-      0 30px 60px rgba(59, 130, 246, 0.3),
-      0 15px 30px rgba(147, 197, 253, 0.2);
+      0 30px 60px rgba(255, 138, 76, 0.3),
+      0 15px 30px rgba(255, 193, 7, 0.2);
   }
 
   .flag-icon {
@@ -218,53 +213,44 @@
     display: inline-block;
     background-size: cover;
     background-position: center;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
   }
 }
 
 @keyframes floating3d {
   0%, 100% { 
-    transform: translateY(0px) rotateX(0deg) rotateY(0deg); 
+    transform: translateY(0px); 
   }
   25% { 
-    transform: translateY(-15px) rotateX(5deg) rotateY(10deg); 
+    transform: translateY(-15px); 
   }
   50% { 
-    transform: translateY(-10px) rotateX(-5deg) rotateY(-5deg); 
+    transform: translateY(-10px); 
   }
   75% { 
-    transform: translateY(-20px) rotateX(3deg) rotateY(-10deg); 
-  }
-}
-
-@keyframes rotate3d {
-  0% { 
-    transform: rotateY(0deg); 
-  }
-  100% { 
-    transform: rotateY(360deg); 
+    transform: translateY(-20px); 
   }
 }
 
 @keyframes pulse3d {
   0%, 100% { 
-    transform: scale(1) rotateX(0deg); 
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    transform: scale(1); 
+    box-shadow: 0 0 20px rgba(255, 138, 76, 0.3);
   }
   50% { 
-    transform: scale(1.05) rotateX(10deg); 
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(147, 197, 253, 0.3);
+    transform: scale(1.05); 
+    box-shadow: 0 0 40px rgba(255, 138, 76, 0.6), 0 0 60px rgba(255, 193, 7, 0.3);
   }
 }
 
 @keyframes slideIn3d {
   0% {
     opacity: 0;
-    transform: translateX(-100px) rotateY(-30deg);
+    transform: translateX(-100px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0) rotateY(0deg);
+    transform: translateX(0);
   }
 }
 
@@ -296,8 +282,8 @@
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-  100% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3); }
+  0% { box-shadow: 0 0 20px rgba(255, 138, 76, 0.3); }
+  100% { box-shadow: 0 0 40px rgba(255, 138, 76, 0.6), 0 0 60px rgba(255, 138, 76, 0.3); }
 }
 
 @keyframes slide-in-up {
