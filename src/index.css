@@ -18,13 +18,13 @@
     --primary: 210 100% 70%; /* Bright electric blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 90% 45%; /* Light blue */
+    --secondary: 200 90% 65%; /* Light blue - updated from darker blue */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 15% 12%;
     --muted-foreground: 215 16% 65%;
 
-    --accent: 45 100% 55%; /* Golden accent */
+    --accent: 200 100% 85%; /* Light blue accent - changed from golden */
     --accent-foreground: 0 0% 5%;
 
     --silver: 0 0% 75%; /* Silver color */
@@ -62,13 +62,13 @@
     --primary: 210 100% 70%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 90% 45%;
+    --secondary: 200 90% 65%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 15% 12%;
     --muted-foreground: 215 16% 65%;
 
-    --accent: 45 100% 55%;
+    --accent: 200 100% 85%;
     --accent-foreground: 0 0% 5%;
 
     --silver: 0 0% 75%;
@@ -160,16 +160,16 @@
   /* White Glow Effects */
   .white-glow {
     box-shadow: 
-      0 0 20px rgba(255, 255, 255, 0.2),
-      0 0 40px rgba(255, 255, 255, 0.1),
-      0 0 60px rgba(255, 255, 255, 0.05);
+      0 0 20px rgba(59, 130, 246, 0.2),
+      0 0 40px rgba(147, 197, 253, 0.1),
+      0 0 60px rgba(219, 234, 254, 0.05);
   }
 
   .white-glow:hover {
     box-shadow: 
-      0 0 30px rgba(255, 255, 255, 0.4),
-      0 0 60px rgba(255, 255, 255, 0.2),
-      0 0 90px rgba(255, 255, 255, 0.1);
+      0 0 30px rgba(59, 130, 246, 0.4),
+      0 0 60px rgba(147, 197, 253, 0.2),
+      0 0 90px rgba(219, 234, 254, 0.1);
   }
 
   .white-text-shadow {
@@ -379,7 +379,16 @@
   .blue-gradient {
     background: linear-gradient(135deg, 
       hsl(210 100% 70%), 
-      hsl(200 90% 45%));
+      hsl(200 90% 65%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .light-blue-gradient {
+    background: linear-gradient(135deg, 
+      hsl(200 100% 85%), 
+      hsl(210 100% 95%));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -435,15 +444,15 @@
 @keyframes pulseGlowWhite {
   0% { 
     box-shadow: 
-      0 0 30px rgba(255, 255, 255, 0.4),
-      0 0 60px rgba(33, 150, 243, 0.4);
+      0 0 30px rgba(59, 130, 246, 0.4),
+      0 0 60px rgba(147, 197, 253, 0.4);
     transform: scale(1);
   }
   100% { 
     box-shadow: 
-      0 0 60px rgba(255, 255, 255, 0.8), 
-      0 0 90px rgba(33, 150, 243, 0.8),
-      0 0 120px rgba(255, 193, 7, 0.5);
+      0 0 60px rgba(59, 130, 246, 0.8), 
+      0 0 90px rgba(147, 197, 253, 0.8),
+      0 0 120px rgba(219, 234, 254, 0.5);
     transform: scale(1.03);
   }
 }

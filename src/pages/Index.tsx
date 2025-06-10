@@ -11,6 +11,8 @@ import { CPSection } from "@/components/CPSection";
 import { CommunitySection } from "@/components/CommunitySection";
 import { ContactForm } from "@/components/ContactForm";
 import { Chatbot } from "@/components/Chatbot";
+import { VisitorStats } from "@/components/VisitorStats";
+import { CPAwarenessSection } from "@/components/CPAwarenessSection";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -20,19 +22,22 @@ const Index = () => {
       <HeroSection />
       <StatsSection />
       
+      {/* Visitor Stats Component */}
+      <VisitorStats />
+      
       {/* Main Sections */}
       <div className="container mx-auto px-4 py-12 space-y-16">
         {/* Quick Access Cards with enhanced clickability */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Link to="/dsa-mastery">
-            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30 cursor-pointer h-full white-glow hover:scale-105">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                  <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
                     <BookOpen className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors white-text-shadow animate-fade-in">DSA Mastery</CardTitle>
+                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">DSA Mastery</CardTitle>
                     <CardDescription>Master DSA to Crack Any Interview</CardDescription>
                   </div>
                 </div>
@@ -47,12 +52,12 @@ const Index = () => {
                   Structured semester-wise plan from Arrays to DP
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="animate-pulse">GFG</Badge>
-                  <Badge variant="secondary" className="animate-pulse">TUF</Badge>
-                  <Badge variant="secondary" className="animate-pulse">NeetCode</Badge>
-                  <Badge variant="secondary" className="animate-pulse">CodingNinja</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">GFG</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">TUF</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">NeetCode</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">CodingNinja</Badge>
                 </div>
-                <Button className="w-full button-3d bg-gradient-to-r from-primary to-secondary white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                <Button className="w-full button-3d bg-gradient-to-r from-blue-500 to-blue-600 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
                   Start DSA Journey
                 </Button>
               </CardContent>
@@ -60,14 +65,14 @@ const Index = () => {
           </Link>
 
           <Link to="/cp-contributors">
-            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/30 cursor-pointer h-full white-glow hover:scale-105">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-gradient-to-r from-secondary to-accent rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                  <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
                     <Code className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg group-hover:text-secondary transition-colors white-text-shadow animate-fade-in">Competitive Programming</CardTitle>
+                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">Competitive Programming</CardTitle>
                     <CardDescription>Journey to Legendary Grandmaster</CardDescription>
                   </div>
                 </div>
@@ -82,11 +87,11 @@ const Index = () => {
                   From 0 to LGM - Complete CP roadmap for Indians
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="animate-pulse">Codeforces</Badge>
-                  <Badge variant="secondary" className="animate-pulse">AtCoder</Badge>
-                  <Badge variant="secondary" className="animate-pulse">ICPC</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Codeforces</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">AtCoder</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">ICPC</Badge>
                 </div>
-                <Button className="w-full button-3d bg-gradient-to-r from-secondary to-accent white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                <Button className="w-full button-3d bg-gradient-to-r from-blue-600 to-blue-700 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
                   View Top Contributors
                 </Button>
               </CardContent>
@@ -94,14 +99,14 @@ const Index = () => {
           </Link>
 
           <Link to="/hackathon-guide">
-            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/30 cursor-pointer h-full white-glow hover:scale-105">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-gradient-to-r from-accent to-primary rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                  <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
                     <Trophy className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg group-hover:text-accent transition-colors white-text-shadow animate-fade-in">Hackathon Guide</CardTitle>
+                    <CardTitle className="text-lg group-hover:text-blue-700 transition-colors white-text-shadow animate-fade-in">Hackathon Guide</CardTitle>
                     <CardDescription>Unstop Focus & PPI Prep</CardDescription>
                   </div>
                 </div>
@@ -116,25 +121,25 @@ const Index = () => {
                   Win hackathons and secure PPIs with our guide
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="animate-pulse">Unstop</Badge>
-                  <Badge variant="secondary" className="animate-pulse">Devfolio</Badge>
-                  <Badge variant="secondary" className="animate-pulse">Hack2Skill</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Unstop</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Devfolio</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Hack2Skill</Badge>
                 </div>
-                <Button className="w-full button-3d bg-gradient-to-r from-accent to-primary white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                <Button className="w-full button-3d bg-gradient-to-r from-blue-700 to-blue-800 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
                   Explore Hackathons
                 </Button>
               </CardContent>
             </Card>
           </Link>
 
-          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30 cursor-pointer h-full white-glow hover:scale-105">
+          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
             <CardHeader className="pb-4">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
                   <Star className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors white-text-shadow animate-fade-in">FANG Toolkit</CardTitle>
+                  <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">FANG Toolkit</CardTitle>
                   <CardDescription>Build Like a Pro, Crack Like a Legend</CardDescription>
                 </div>
               </div>
@@ -149,25 +154,25 @@ const Index = () => {
                 FANG-ready projects and interview preparation
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary" className="animate-pulse">LLD</Badge>
-                <Badge variant="secondary" className="animate-pulse">HLD</Badge>
-                <Badge variant="secondary" className="animate-pulse">System Design</Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">LLD</Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">HLD</Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">System Design</Badge>
               </div>
-              <Button className="w-full button-3d bg-gradient-to-r from-primary to-secondary white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+              <Button className="w-full button-3d bg-gradient-to-r from-blue-500 to-blue-600 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
                 Build Projects
               </Button>
             </CardContent>
           </Card>
 
           <Link to="/resume-tips">
-            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/30 cursor-pointer h-full white-glow hover:scale-105">
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-gradient-to-r from-secondary to-accent rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                  <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
                     <FileText className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg group-hover:text-secondary transition-colors white-text-shadow animate-fade-in">Diamond Resume</CardTitle>
+                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">Diamond Resume</CardTitle>
                     <CardDescription>AI-Powered Resume Analyzer</CardDescription>
                   </div>
                 </div>
@@ -182,25 +187,25 @@ const Index = () => {
                   College student hacks for FANG-ready resumes
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="animate-pulse">ATS Bypass</Badge>
-                  <Badge variant="secondary" className="animate-pulse">Keywords</Badge>
-                  <Badge variant="secondary" className="animate-pulse">Templates</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">ATS Bypass</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Keywords</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Templates</Badge>
                 </div>
-                <Button className="w-full button-3d bg-gradient-to-r from-secondary to-accent white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                <Button className="w-full button-3d bg-gradient-to-r from-blue-600 to-blue-700 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
                   Analyze Resume
                 </Button>
               </CardContent>
             </Card>
           </Link>
 
-          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-accent/30 cursor-pointer h-full white-glow hover:scale-105">
+          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
             <CardHeader className="pb-4">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-r from-accent to-primary rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
                   <Bot className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg group-hover:text-accent transition-colors white-text-shadow animate-fade-in">AI Guide</CardTitle>
+                  <CardTitle className="text-lg group-hover:text-blue-700 transition-colors white-text-shadow animate-fade-in">AI Guide</CardTitle>
                   <CardDescription>Personal Coding Companion</CardDescription>
                 </div>
               </div>
@@ -215,12 +220,12 @@ const Index = () => {
                 GPT-powered roadmap and problem suggestions
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary" className="animate-pulse">Roadmap Gen</Badge>
-                <Badge variant="secondary" className="animate-pulse">Problem Rec</Badge>
-                <Badge variant="secondary" className="animate-pulse">24/7 Support</Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Roadmap Gen</Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Problem Rec</Badge>
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">24/7 Support</Badge>
               </div>
               <Button 
-                className="w-full button-3d bg-gradient-to-r from-accent to-primary white-glow hover:scale-105 transition-transform duration-300" 
+                className="w-full button-3d bg-gradient-to-r from-blue-700 to-blue-800 text-white white-glow hover:scale-105 transition-transform duration-300" 
                 variant="outline"
                 onClick={() => {
                   const chatbot = document.querySelector('[data-chatbot]');
@@ -237,10 +242,10 @@ const Index = () => {
 
         {/* Top Practice Platforms Section with Logos */}
         <section className="mb-16">
-          <Card className="card-3d glass-morphism border-2 border-primary/20 white-glow hover:scale-[1.02] transition-transform duration-500">
+          <Card className="card-3d glass-morphism border-2 border-blue-200/20 white-glow hover:scale-[1.02] transition-transform duration-500">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-r from-primary to-secondary rounded-xl pulse-3d white-glow animate-pulse">
+                <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl pulse-3d white-glow animate-pulse">
                   <Code className="h-8 w-8 text-white" />
                 </div>
                 <div>
@@ -286,10 +291,10 @@ const Index = () => {
 
         {/* Country-wise Performance Section */}
         <section className="mb-16">
-          <Card className="card-3d glass-morphism border-2 border-secondary/20 white-glow hover:scale-[1.02] transition-transform duration-500">
+          <Card className="card-3d glass-morphism border-2 border-blue-200/20 white-glow hover:scale-[1.02] transition-transform duration-500">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-r from-secondary to-accent rounded-xl pulse-3d white-glow animate-pulse">
+                <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl pulse-3d white-glow animate-pulse">
                   <Globe className="h-8 w-8 text-white" />
                 </div>
                 <div>
@@ -315,7 +320,7 @@ const Index = () => {
                   { rank: "8", country: "Indonesia", flag: "https://i.postimg.cc/W1P81wZn/icons8-indonesia-48.png", achievements: "8 TCO titles, Rapid growth in international coding competitions" },
                   { rank: "9", country: "India", flag: "https://i.postimg.cc/ZnC76YYx/icons8-india-48.png", achievements: "ICPC World Finalist teams regularly, TCO: 2 titles, 30+ IOI medals, top CP community size" }
                 ].map((country, index) => (
-                  <div key={country.country} className="legend-card p-6 bg-gradient-to-br from-primary/10 to-secondary/10 border border-white/20 white-glow hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div key={country.country} className="legend-card p-6 bg-gradient-to-br from-blue-50/10 to-blue-100/10 border border-white/20 white-glow hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                     <div className="flex items-center gap-3 mb-4">
                       <img src={country.flag} alt={`${country.country} flag`} className="h-8 w-8 rounded animate-pulse" />
                       <div>
@@ -326,7 +331,7 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-8 p-6 bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl border border-white/20 white-glow hover:scale-[1.02] transition-transform duration-300 animate-fade-in">
+              <div className="mt-8 p-6 bg-gradient-to-r from-blue-100/10 to-blue-50/10 rounded-xl border border-white/20 white-glow hover:scale-[1.02] transition-transform duration-300 animate-fade-in">
                 <h4 className="font-bold text-lg mb-2 white-text-shadow animate-scale-in">📝 Reference Summary:</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed animate-fade-in">
                   "China and Russia dominate the global competitive programming scene with consistent victories in ICPC, TCO, and IMO. While the USA has a historic lead in ICPC, Poland and Japan show strength in algorithmic contests like Topcoder and AtCoder. India, despite massive participation, is still developing a gold-standard legacy, with growing impact in ICPC and Olympiads."
@@ -341,10 +346,10 @@ const Index = () => {
 
         {/* Fun Facts & Jokes Section */}
         <section className="mb-16">
-          <Card className="card-3d glass-morphism border-2 border-accent/20 white-glow hover:scale-[1.02] transition-transform duration-500">
+          <Card className="card-3d glass-morphism border-2 border-blue-200/20 white-glow hover:scale-[1.02] transition-transform duration-500">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-r from-accent to-primary rounded-xl pulse-3d white-glow animate-pulse">
+                <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl pulse-3d white-glow animate-pulse">
                   <Laugh className="h-8 w-8 text-white" />
                 </div>
                 <div>
@@ -368,7 +373,7 @@ const Index = () => {
                     { title: "🖥️ CP Problems Power Real-World Tech", desc: "CP builds the exact skillset used in FANG interviews: problem-solving under time, space, and edge-case constraints. Many CP stars are now engineers at Google, Meta, Apple, or are building startups." },
                     { title: "🏛️ Some Countries Have National CP Training Camps", desc: "In China, Russia, and Korea, students attend full-time algorithm bootcamps from high school. These camps prepare them for Olympiads (IOI) — like how athletes train for the Olympics." }
                   ].map((fact, index) => (
-                    <div key={fact.title} className="card-3d p-4 bg-primary/5 rounded-xl border border-primary/20 white-glow hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                    <div key={fact.title} className="card-3d p-4 bg-blue-50/5 rounded-xl border border-blue-200/20 white-glow hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                       <div className="font-medium text-primary white-text-shadow animate-scale-in">{fact.title}</div>
                       <div className="text-sm text-muted-foreground mt-2 leading-relaxed animate-fade-in">{fact.desc}</div>
                     </div>
@@ -386,7 +391,7 @@ const Index = () => {
                     { setup: "Why did the DP solution break up with the greedy one?", punchline: "Because it had better memory and looked ahead!" },
                     { setup: "What's a CP coder's worst nightmare?", punchline: "Segmentation fault… on line 213… during a live contest… And no test case fails locally." }
                   ].map((joke, index) => (
-                    <div key={joke.setup} className="card-3d p-4 bg-accent/5 rounded-xl border border-accent/20 white-glow hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                    <div key={joke.setup} className="card-3d p-4 bg-blue-50/5 rounded-xl border border-blue-200/20 white-glow hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                       <div className="font-medium text-accent mb-2 white-text-shadow animate-scale-in">{joke.setup}</div>
                       <div className="text-sm text-muted-foreground italic animate-fade-in">{joke.punchline}</div>
                     </div>
@@ -399,6 +404,10 @@ const Index = () => {
 
         <DSASection />
         <CPSection />
+        
+        {/* CP Awareness Section */}
+        <CPAwarenessSection />
+        
         <CommunitySection />
         
         {/* Contact Form Section */}
@@ -407,7 +416,7 @@ const Index = () => {
         {/* Resources Section Link */}
         <section className="text-center">
           <Link to="/resources">
-            <Card className="card-3d glass-morphism border-2 border-primary/20 p-12 cursor-pointer hover:border-primary/40 transition-all white-glow hover:scale-105 duration-500">
+            <Card className="card-3d glass-morphism border-2 border-blue-200/20 p-12 cursor-pointer hover:border-blue-300/40 transition-all white-glow hover:scale-105 duration-500">
               <CardContent className="pt-0">
                 <div className="floating-3d mb-6 white-glow animate-pulse">
                   <Globe className="h-16 w-16 text-primary mx-auto" />
@@ -418,7 +427,7 @@ const Index = () => {
                 <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed white-text-shadow animate-fade-in">
                   Comprehensive collection of competitive programming resources, tutorials, and practice platforms
                 </p>
-                <Button size="lg" className="button-3d bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent text-lg px-8 py-4 white-glow hover:scale-110 transition-all duration-300 animate-scale-in">
+                <Button size="lg" className="button-3d bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-lg px-8 py-4 white-glow hover:scale-110 transition-all duration-300 animate-scale-in">
                   <ExternalLink className="h-5 w-5 mr-2 animate-pulse" />
                   View All Resources
                 </Button>
