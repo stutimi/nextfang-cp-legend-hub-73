@@ -7,83 +7,83 @@
 
 @layer base {
   :root {
-    --background: 240 6% 8%; /* Dark background inspired by the portfolio */
-    --foreground: 240 5% 95%;
+    --background: 0 0% 7%; /* Very dark background */
+    --foreground: 210 20% 98%;
 
-    --card: 240 6% 10%;
-    --card-foreground: 240 5% 95%;
+    --card: 0 0% 9%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 240 6% 10%;
-    --popover-foreground: 240 5% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 14 100% 57%; /* Orange accent */
-    --primary-foreground: 240 6% 8%;
+    --primary: 0 84% 60%; /* Red primary */
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 240 6% 15%; /* Darker gray */
-    --secondary-foreground: 240 5% 95%;
+    --secondary: 210 40% 15%; /* Dark gray-blue */
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 240 6% 12%;
-    --muted-foreground: 240 4% 65%;
+    --muted: 210 40% 12%;
+    --muted-foreground: 215 16% 57%;
 
-    --accent: 45 100% 70%; /* Yellow accent */
-    --accent-foreground: 240 6% 8%;
+    --accent: 45 93% 47%; /* Gold accent */
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 240 5% 95%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 240 6% 20%;
-    --input: 240 6% 15%;
-    --ring: 14 100% 57%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 0 84% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 240 6% 8%;
-    --sidebar-foreground: 240 5% 90%;
-    --sidebar-primary: 14 100% 57%;
-    --sidebar-primary-foreground: 240 6% 8%;
-    --sidebar-accent: 240 6% 12%;
-    --sidebar-accent-foreground: 240 5% 90%;
-    --sidebar-border: 240 6% 20%;
-    --sidebar-ring: 14 100% 57%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 0 84% 60%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 210 40% 12%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 27.9% 16.9%;
+    --sidebar-ring: 0 84% 60%;
   }
 
   .dark {
-    --background: 240 6% 8%;
-    --foreground: 240 5% 95%;
+    --background: 0 0% 7%;
+    --foreground: 210 20% 98%;
 
-    --card: 240 6% 10%;
-    --card-foreground: 240 5% 95%;
+    --card: 0 0% 9%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 240 6% 10%;
-    --popover-foreground: 240 5% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 14 100% 57%;
-    --primary-foreground: 240 6% 8%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 240 6% 15%;
-    --secondary-foreground: 240 5% 95%;
+    --secondary: 210 40% 15%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 240 6% 12%;
-    --muted-foreground: 240 4% 65%;
+    --muted: 210 40% 12%;
+    --muted-foreground: 215 16% 57%;
 
-    --accent: 45 100% 70%;
-    --accent-foreground: 240 6% 8%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 240 5% 95%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 240 6% 20%;
-    --input: 240 6% 15%;
-    --ring: 14 100% 57%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 0 84% 60%;
 
-    --sidebar-background: 240 6% 8%;
-    --sidebar-foreground: 240 5% 90%;
-    --sidebar-primary: 14 100% 57%;
-    --sidebar-primary-foreground: 240 6% 8%;
-    --sidebar-accent: 240 6% 12%;
-    --sidebar-accent-foreground: 240 5% 90%;
-    --sidebar-border: 240 6% 20%;
-    --sidebar-ring: 14 100% 57%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 0 84% 60%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 210 40% 12%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 27.9% 16.9%;
+    --sidebar-ring: 0 84% 60%;
   }
 }
 
@@ -98,7 +98,7 @@
   }
 }
 
-/* Enhanced 3D Animation Utilities without rotation */
+/* Enhanced 3D Animation Utilities */
 @layer utilities {
   .card-3d {
     transform-style: preserve-3d;
@@ -114,7 +114,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 138, 76, 0.1), rgba(255, 193, 7, 0.1));
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(249, 115, 22, 0.1));
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -127,8 +127,8 @@
   .card-3d:hover {
     transform: translateZ(30px) scale(1.02);
     box-shadow: 
-      0 25px 50px rgba(255, 138, 76, 0.25),
-      0 12px 24px rgba(255, 138, 76, 0.15),
+      0 25px 50px rgba(220, 38, 38, 0.25),
+      0 12px 24px rgba(220, 38, 38, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
@@ -161,12 +161,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff8a4c' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dc2626' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     animation: patternMove 20s linear infinite;
   }
 
   .glass-morphism {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -186,14 +186,14 @@
 
   .button-3d:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(255, 138, 76, 0.4);
+    box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
   }
 
   .legend-card {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255,255,255,0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -202,18 +202,16 @@
   .legend-card:hover {
     transform: translateY(-10px);
     box-shadow: 
-      0 30px 60px rgba(255, 138, 76, 0.3),
-      0 15px 30px rgba(255, 193, 7, 0.2);
+      0 30px 60px rgba(220, 38, 38, 0.3),
+      0 15px 30px rgba(249, 115, 22, 0.2);
   }
 
-  .flag-icon {
-    width: 24px;
-    height: 18px;
-    border-radius: 3px;
-    display: inline-block;
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgba(255,255,255,0.2);
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
 }
 
@@ -235,11 +233,11 @@
 @keyframes pulse3d {
   0%, 100% { 
     transform: scale(1); 
-    box-shadow: 0 0 20px rgba(255, 138, 76, 0.3);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
   }
   50% { 
     transform: scale(1.05); 
-    box-shadow: 0 0 40px rgba(255, 138, 76, 0.6), 0 0 60px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.6), 0 0 60px rgba(249, 115, 22, 0.3);
   }
 }
 
@@ -259,13 +257,20 @@
   100% { transform: translateX(60px) translateY(60px); }
 }
 
+@keyframes pulseGlow {
+  0% { 
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+    transform: scale(1);
+  }
+  100% { 
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.6), 0 0 60px rgba(220, 38, 38, 0.3);
+    transform: scale(1.02);
+  }
+}
+
 /* Float animation for hero elements */
 .float-animation {
   animation: float 6s ease-in-out infinite;
-}
-
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite alternate;
 }
 
 .slide-in-up {
@@ -279,11 +284,6 @@
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
-}
-
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 20px rgba(255, 138, 76, 0.3); }
-  100% { box-shadow: 0 0 40px rgba(255, 138, 76, 0.6), 0 0 60px rgba(255, 138, 76, 0.3); }
 }
 
 @keyframes slide-in-up {
