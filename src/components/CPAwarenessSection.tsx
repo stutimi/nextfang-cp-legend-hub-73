@@ -6,70 +6,70 @@ import { AlertTriangle, Target, BookOpen, Users, Zap, TrendingUp, Globe, Award, 
 
 export const CPAwarenessSection = () => {
   return (
-    <section className="py-16 hero-bg relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
       {/* Floating spotlight elements for 3D effect */}
-      <div className="spotlight-white absolute top-10 left-10 opacity-30"></div>
-      <div className="spotlight-white absolute top-32 right-20 opacity-25"></div>
-      <div className="spotlight-white absolute bottom-20 left-1/3 opacity-20"></div>
+      <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400/20 rounded-full blur-xl opacity-30 animate-pulse"></div>
+      <div className="absolute top-32 right-20 w-24 h-24 bg-cyan-400/25 rounded-full blur-xl opacity-25 animate-pulse"></div>
+      <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-blue-300/20 rounded-full blur-xl opacity-20 animate-pulse"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4 glass-morphism border-primary/30 text-primary hover:bg-primary/20 animate-fade-in pulse-glow-white">
+          <Badge variant="secondary" className="mb-4 bg-blue-900/50 border-blue-400/30 text-blue-300 hover:bg-blue-800/60 backdrop-blur-sm">
             <AlertTriangle className="h-4 w-4 mr-2" />
             Critical Analysis
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient white-text-shadow animate-scale-in floating-3d">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-200 via-cyan-200 to-blue-300 bg-clip-text text-transparent transform hover:scale-105 transition-transform duration-300">
             Why CP Awareness is Missing in India?
           </h2>
-          <p className="text-xl text-accent max-w-3xl mx-auto leading-relaxed animate-fade-in white-text-shadow">
-            Understanding the gap and how <strong className="text-gradient">NEXTFANG</strong> is bridging it
+          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
+            Understanding the gap and how <strong className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">NEXTFANG</strong> is bridging it
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Problems Section */}
-          <Card className="card-3d glass-morphism border-2 border-primary/30 hover:border-accent/50 white-glow animate-fade-in">
+          <Card className="bg-slate-800/50 backdrop-blur-sm border-2 border-blue-500/30 hover:border-cyan-400/50 shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 glass-morphism border border-destructive/30 rounded-xl pulse-3d">
-                  <AlertTriangle className="h-6 w-6 text-destructive" />
+                <div className="p-3 bg-red-900/50 border border-red-500/30 rounded-xl transform hover:rotate-6 transition-transform duration-300">
+                  <AlertTriangle className="h-6 w-6 text-red-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl text-gradient">Current Problems</CardTitle>
-                  <CardDescription className="text-accent">Why CP awareness lacks in India</CardDescription>
+                  <CardTitle className="text-2xl bg-gradient-to-r from-red-300 to-red-200 bg-clip-text text-transparent">Current Problems</CardTitle>
+                  <CardDescription className="text-blue-300">Why CP awareness lacks in India</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
               {[
                 {
-                  icon: <BookOpen className="h-5 w-5 text-secondary" />,
+                  icon: <BookOpen className="h-5 w-5 text-cyan-400" />,
                   title: "Educational System Gap",
                   desc: "Traditional curriculum focuses on theory, not competitive programming practice"
                 },
                 {
-                  icon: <Users className="h-5 w-5 text-accent" />,
+                  icon: <Users className="h-5 w-5 text-blue-400" />,
                   title: "Lack of Mentorship",
                   desc: "Limited access to experienced CP practitioners and proper guidance"
                 },
                 {
-                  icon: <Globe className="h-5 w-5 text-primary" />,
+                  icon: <Globe className="h-5 w-5 text-cyan-300" />,
                   title: "Resource Fragmentation",
                   desc: "Quality CP resources scattered across platforms without structured learning paths"
                 },
                 {
-                  icon: <Brain className="h-5 w-5 text-accent" />,
+                  icon: <Brain className="h-5 w-5 text-blue-300" />,
                   title: "Awareness Deficit",
                   desc: "Students unaware of CP's importance for FANG interviews and career growth"
                 }
               ].map((problem, index) => (
-                <div key={problem.title} className="flex gap-4 p-4 glass-morphism border border-muted/20 rounded-xl hover:border-primary/30 transition-all duration-300 card-3d white-glow slide-in-3d" style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="flex-shrink-0 p-2 glass-morphism border border-primary/20 rounded-lg shadow-sm pulse-3d">
+                <div key={problem.title} className="flex gap-4 p-4 bg-slate-700/30 border border-slate-600/20 rounded-xl hover:border-blue-400/30 transition-all duration-300 transform hover:translateX-2" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="flex-shrink-0 p-2 bg-slate-600/50 border border-blue-400/20 rounded-lg shadow-sm transform hover:scale-110 transition-transform duration-300">
                     {problem.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1 white-text-shadow">{problem.title}</h4>
-                    <p className="text-sm text-muted-foreground">{problem.desc}</p>
+                    <h4 className="font-semibold text-slate-200 mb-1">{problem.title}</h4>
+                    <p className="text-sm text-slate-400">{problem.desc}</p>
                   </div>
                 </div>
               ))}
@@ -77,48 +77,48 @@ export const CPAwarenessSection = () => {
           </Card>
 
           {/* Solutions Section */}
-          <Card className="card-3d glass-morphism border-2 border-primary/30 hover:border-accent/50 white-glow animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <Card className="bg-slate-800/50 backdrop-blur-sm border-2 border-blue-500/30 hover:border-cyan-400/50 shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 glass-morphism border border-primary/30 rounded-xl pulse-3d">
-                  <Target className="h-6 w-6 text-primary" />
+                <div className="p-3 bg-blue-900/50 border border-blue-400/30 rounded-xl transform hover:rotate-6 transition-transform duration-300">
+                  <Target className="h-6 w-6 text-blue-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl text-gradient">NEXTFANG Solutions</CardTitle>
-                  <CardDescription className="text-accent">How we're bridging the gap</CardDescription>
+                  <CardTitle className="text-2xl bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">NEXTFANG Solutions</CardTitle>
+                  <CardDescription className="text-blue-300">How we're bridging the gap</CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent className="space-y-6">
               {[
                 {
-                  icon: <Code2 className="h-5 w-5 text-primary" />,
+                  icon: <Code2 className="h-5 w-5 text-blue-400" />,
                   title: "Structured Learning Path",
                   desc: "Semester-wise DSA progression from beginner to Legendary Grandmaster"
                 },
                 {
-                  icon: <Users className="h-5 w-5 text-accent" />,
+                  icon: <Users className="h-5 w-5 text-cyan-400" />,
                   title: "Community & Mentorship",
                   desc: "Connect with top CP contributors and get personalized guidance"
                 },
                 {
-                  icon: <TrendingUp className="h-5 w-5 text-secondary" />,
+                  icon: <TrendingUp className="h-5 w-5 text-blue-300" />,
                   title: "Career-Focused Approach",
                   desc: "Direct mapping of CP skills to FANG interview success and career growth"
                 },
                 {
-                  icon: <Award className="h-5 w-5 text-accent" />,
+                  icon: <Award className="h-5 w-5 text-cyan-300" />,
                   title: "Comprehensive Resources",
                   desc: "One-stop platform for all CP needs - from basics to advanced problem solving"
                 }
               ].map((solution, index) => (
-                <div key={solution.title} className="flex gap-4 p-4 glass-morphism border border-muted/20 rounded-xl hover:border-primary/30 transition-all duration-300 card-3d white-glow slide-in-3d" style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="flex-shrink-0 p-2 glass-morphism border border-primary/20 rounded-lg shadow-sm pulse-3d">
+                <div key={solution.title} className="flex gap-4 p-4 bg-slate-700/30 border border-slate-600/20 rounded-xl hover:border-blue-400/30 transition-all duration-300 transform hover:translateX-2" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="flex-shrink-0 p-2 bg-slate-600/50 border border-blue-400/20 rounded-lg shadow-sm transform hover:scale-110 transition-transform duration-300">
                     {solution.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1 white-text-shadow">{solution.title}</h4>
-                    <p className="text-sm text-muted-foreground">{solution.desc}</p>
+                    <h4 className="font-semibold text-slate-200 mb-1">{solution.title}</h4>
+                    <p className="text-sm text-slate-400">{solution.desc}</p>
                   </div>
                 </div>
               ))}
@@ -128,22 +128,22 @@ export const CPAwarenessSection = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <Card className="card-3d glass-morphism border-2 border-primary/30 p-8 max-w-4xl mx-auto white-glow animate-fade-in">
+          <Card className="bg-slate-800/50 backdrop-blur-sm border-2 border-blue-500/30 p-8 max-w-4xl mx-auto shadow-2xl hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300">
             <CardContent className="pt-0">
-              <Zap className="h-16 w-16 text-primary mx-auto mb-6 pulse-3d floating-3d" />
-              <h3 className="text-3xl font-bold mb-4 text-gradient white-text-shadow animate-scale-in">
+              <Zap className="h-16 w-16 text-blue-400 mx-auto mb-6 transform hover:rotate-12 hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-200 via-cyan-200 to-blue-300 bg-clip-text text-transparent">
                 Join the Movement
               </h3>
-              <p className="text-lg text-accent mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in white-text-shadow">
+              <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Be part of India's first comprehensive competitive programming ecosystem. 
                 Together, we're creating the next generation of world-class programmers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="button-3d bg-primary hover:bg-primary/80 text-primary-foreground px-8 py-3 animate-scale-in white-glow">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
                   <TrendingUp className="h-5 w-5 mr-2" />
                   Start Your Journey
                 </Button>
-                <Button variant="outline" size="lg" className="button-3d border-primary text-primary hover:bg-primary/10 px-8 py-3 animate-scale-in white-glow" style={{animationDelay: '0.1s'}}>
+                <Button variant="outline" size="lg" className="border-blue-400 text-blue-300 hover:bg-blue-900/50 px-8 py-3 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
                   <Users className="h-5 w-5 mr-2" />
                   Join Community
                 </Button>
