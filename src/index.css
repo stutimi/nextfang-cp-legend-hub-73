@@ -404,8 +404,6 @@
   }
 }
 
-/* // ... keep existing code (keyframes animations) */}
-
 @keyframes floating3d {
   0%, 100% { 
     transform: translateY(0px) rotateY(0deg); 
