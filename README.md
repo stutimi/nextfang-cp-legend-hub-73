@@ -1,73 +1,140 @@
-# Welcome to your Lovable project
+# 🧠 NEXTFAANG: CP Legend Hub
 
-## Project info
+Welcome to your Lovable project! This is a competitive programming and DSA learning platform designed for both CS and non-CS students. The goal is to empower students to crack tech interviews and master CP through structured learning, performance analysis, and curated content.
 
-**URL**: https://lovable.dev/projects/0aa7af2e-318b-4b38-9fea-5d634e70a97a
+---
 
-## How can I edit this code?
+## 🌐 Project Info
 
-There are several ways of editing your application.
+**Live Demo**: [NEXTFAANG Platform](https://nextfang-cp-legend-hub-59.lovable.app/)
 
-**Use Lovable**
+**Lovable URL**: [Edit in Lovable](https://lovable.dev/projects/0aa7af2e-318b-4b38-9fea-5d634e70a97a)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0aa7af2e-318b-4b38-9fea-5d634e70a97a) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🧩 Features
 
-**Use your preferred IDE**
+- 📍 CP vs DSA roadmap with visual progress
+- 📊 Dynamic performance charts and personalized suggestions
+- 🧠 Interview prep with real-world coding scenarios
+- 📝 Blogs, tips, and career guidance
+- 🔔 Notifications and productivity reminders
+- 📱 Fully responsive UI with smooth animations
+- ⚙️ Ongoing feature development and improvements
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Tech Stack
 
-Follow these steps:
+**Frontend & Build Tools**
+- ⚛️ React 18 (with Hooks & Components)
+- ⚡ Vite (for fast builds)
+- 🟦 TypeScript
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+**Styling & UI**
+- 🎨 Tailwind CSS
+- 🧱 shadcn/ui
+- 🧭 Lucide React (icons)
+
+**Routing & State**
+- 🧭 React Router DOM
+- 🪝 TanStack Query (React Query)
+
+**Utilities & Libraries**
+- 📊 Recharts (charts and graphs)
+- 📋 React Hook Form (form handling)
+- 🔐 Zod (schema validation)
+- 🔔 Sonner (toast notifications)
+- 🕒 date-fns (time formatting)
+
+---
+
+## 📁 Folder Structure
+
+/nextfang
+├── index.html # Root HTML
+├── public/ # Static assets
+├── src/
+│ ├── App.tsx # Main App component
+│ ├── pages/ # Pages (Home, Blogs, Roadmap, etc.)
+│ ├── components/ # Reusable UI components
+│ ├── assets/ # Images and logos
+│ ├── styles/ # Tailwind & custom CSS
+│ └── main.tsx # App entry point
+└── package.json # Project metadata
+
+yaml
+Copy
+Edit
+
+---
+
+## ⚙️ How Can I Edit This Code?
+
+### ✨ Option 1: Use Lovable
+
+Just visit the [Lovable Project](https://lovable.dev/projects/0aa7af2e-318b-4b38-9fea-5d634e70a97a) and start editing via prompts.  
+Changes made here will automatically commit to your repo.
+
+---
+
+### 💻 Option 2: Use Your Own IDE
+
+Make changes locally using VS Code or any preferred editor.
+
+#### Local Setup Instructions
+
+```bash
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Go into the project folder
+cd nextfang
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install the dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Run the development server
 npm run dev
-```
+Make changes, test locally, and push updates to reflect on Lovable.
 
-**Edit a file directly in GitHub**
+🧠 Option 3: GitHub Codespaces
+Click Code → Codespaces → New Codespace
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Edit files in the cloud and commit changes
 
-**Use GitHub Codespaces**
+✏️ Option 4: Edit Directly in GitHub
+Go to the file
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Click the 🖉 pencil icon to edit
 
-## What technologies are used for this project?
+Commit changes and push
 
-This project is built with:
+🚀 How to Deploy This Project?
+Open Lovable
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Click Share → Publish
 
-## How can I deploy this project?
+Done — it’s live!
 
-Simply open [Lovable](https://lovable.dev/projects/0aa7af2e-318b-4b38-9fea-5d634e70a97a) and click on Share -> Publish.
+🌍 Custom Domain Setup
+You can set up your own domain by going to:
 
-## Can I connect a custom domain to my Lovable project?
+Project → Settings → Domains → Connect Domain
 
-Yes, you can!
+Read the custom domain setup guide
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+🤝 Contributing
+We welcome your contributions! Fork, improve, and submit PRs.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+bash
+Copy
+Edit
+git checkout -b feature/awesome-feature
+git commit -m "Add awesome feature"
+git push origin feature/awesome-feature
+📬 Contact
+📧 Email: your.email@example.com
+💼 LinkedIn: Stuti Mishra
+
+<p align="center"> Built with 💙 by <strong>Stuti Mishra</strong><br/> <em>Empowering every student to become the next CP legend 💻🔥</em> </p> ```
