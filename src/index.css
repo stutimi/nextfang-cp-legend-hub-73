@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,6 +98,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -106,6 +111,14 @@
 
 /* Enhanced 3D Animation Utilities with White Shining Effects */
 @layer utilities {
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
+  }
+
   .card-3d {
     transform-style: preserve-3d;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -352,10 +365,6 @@
   .spotlight:nth-child(2) { animation-delay: 1s; }
   .spotlight:nth-child(3) { animation-delay: 2s; }
 
-  .scroll-smooth {
-    scroll-behavior: smooth;
-  }
-
   .silver-gradient {
     background: linear-gradient(135deg, 
       hsl(0 0% 90%), 
@@ -394,6 +403,8 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+/* // ... keep existing code (keyframes animations) */}
 
 @keyframes floating3d {
   0%, 100% { 
@@ -481,6 +492,14 @@
   animation: fade-in-scale 0.6s ease-out;
 }
 
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-25px); }
@@ -501,6 +520,28 @@
   0% {
     opacity: 0;
     transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;

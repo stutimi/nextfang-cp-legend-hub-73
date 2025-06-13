@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Trophy, Code, Users, Bot, FileText, Star, TrendingUp, Globe, ExternalLink, Zap, Target, Laugh } from "lucide-react";
+import { BookOpen, Trophy, Code, Users, Bot, FileText, Star, TrendingUp, Globe, ExternalLink, Zap, Target, Laugh, BarChart3, Calendar, Gamepad2, MessageSquare } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { StatsSection } from "@/components/StatsSection";
@@ -17,9 +17,11 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background scroll-smooth">
       <Navbar />
-      <HeroSection />
+      <section id="hero">
+        <HeroSection />
+      </section>
       <StatsSection />
       
       {/* Visitor Stats Component */}
@@ -27,217 +29,248 @@ const Index = () => {
       
       {/* Main Sections */}
       <div className="container mx-auto px-4 py-12 space-y-16">
-        {/* Quick Access Cards with enhanced clickability */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Link to="/dsa-mastery">
+        {/* Interactive Feature Cards Section */}
+        <section id="features" className="scroll-mt-20">
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="mb-4 bg-blue-900/50 border-blue-400/30 text-blue-300 hover:bg-blue-800/60 backdrop-blur-sm">
+              <Star className="h-4 w-4 mr-2" />
+              Interactive Features
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-200 via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+              Smart Tools for Smart Students
+            </h2>
+            <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
+              Experience the power of <strong className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">NEXTFANG</strong>'s comprehensive learning ecosystem
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Progress Charts Feature */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
-                    <BookOpen className="h-6 w-6 text-white" />
+                    <BarChart3 className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">DSA Mastery</CardTitle>
-                    <CardDescription>Master DSA to Crack Any Interview</CardDescription>
+                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow">📊 Live Progress Charts</CardTitle>
+                    <CardDescription>Real-time tracking of your CP journey</CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <img 
-                  src="https://i.postimg.cc/SN9W2vpM/Screenshot-2025-06-10-134124.png" 
-                  alt="DSA Mastery"
-                  className="w-full h-32 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300"
-                />
+                {/* Animated Progress Demo */}
+                <div className="mb-4 p-4 bg-gradient-to-r from-blue-50/10 to-blue-100/10 rounded-lg">
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-sm">
+                      <span>DSA Progress</span>
+                      <span className="text-blue-400">78%</span>
+                    </div>
+                    <div className="w-full bg-slate-700 rounded-full h-2">
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full animate-pulse" style={{width: '78%'}}></div>
+                    </div>
+                  </div>
+                </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Structured semester-wise plan from Arrays to DP
+                  Track your daily progress, streak counts, and skill improvements
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">GFG</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">TUF</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">NeetCode</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">CodingNinja</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Live Charts</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Streak Tracking</Badge>
                 </div>
                 <Button className="w-full button-3d bg-gradient-to-r from-blue-500 to-blue-600 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
-                  Start DSA Journey
+                  View Analytics
                 </Button>
               </CardContent>
             </Card>
-          </Link>
 
-          <Link to="/cp-contributors">
-            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
-                    <Code className="h-6 w-6 text-white" />
+            {/* Interactive Roadmap Feature */}
+            <Link to="/dsa-mastery">
+              <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                      <Target className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow">🧩 Interactive CP Roadmap</CardTitle>
+                      <CardDescription>Step-by-step guided learning path</CardDescription>
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">Competitive Programming</CardTitle>
-                    <CardDescription>Journey to Legendary Grandmaster</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {/* Interactive Roadmap Preview */}
+                  <div className="mb-4 space-y-2">
+                    {['Arrays & Strings', 'Two Pointers', 'Dynamic Programming'].map((topic, index) => (
+                      <div key={topic} className={`p-2 rounded border-l-4 text-xs transition-all hover:scale-105 ${
+                        index === 0 ? 'border-green-500 bg-green-50/10' : 
+                        index === 1 ? 'border-blue-500 bg-blue-50/10' : 
+                        'border-gray-500 bg-gray-50/10'
+                      }`}>
+                        <div className="flex justify-between">
+                          <span>{topic}</span>
+                          <span className={index === 0 ? 'text-green-400' : index === 1 ? 'text-blue-400' : 'text-gray-400'}>
+                            {index === 0 ? '✓' : index === 1 ? '→' : '○'}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <img 
-                  src="https://i.postimg.cc/Zn0PfMSZ/Screenshot-2025-06-10-213117.png" 
-                  alt="Competitive Programming"
-                  className="w-full h-32 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300"
-                />
-                <p className="text-sm text-muted-foreground mb-4">
-                  From 0 to LGM - Complete CP roadmap for Indians
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Codeforces</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">AtCoder</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">ICPC</Badge>
-                </div>
-                <Button className="w-full button-3d bg-gradient-to-r from-blue-600 to-blue-700 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
-                  View Top Contributors
-                </Button>
-              </CardContent>
-            </Card>
-          </Link>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Collapsible cards for each topic with practice problems
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Guided Path</Badge>
+                    <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Progress Sync</Badge>
+                  </div>
+                  <Button className="w-full button-3d bg-gradient-to-r from-blue-600 to-blue-700 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                    Explore Roadmap
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
-          <Link to="/hackathon-guide">
+            {/* Blog Preview Feature */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
                   <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
-                    <Trophy className="h-6 w-6 text-white" />
+                    <BookOpen className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg group-hover:text-blue-700 transition-colors white-text-shadow animate-fade-in">Hackathon Guide</CardTitle>
-                    <CardDescription>Unstop Focus & PPI Prep</CardDescription>
+                    <CardTitle className="text-lg group-hover:text-blue-700 transition-colors white-text-shadow">📚 Career Tips & Blogs</CardTitle>
+                    <CardDescription>Featured insights from industry experts</CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <img 
-                  src="https://i.postimg.cc/sg9rfnk3/hackathon.webp" 
-                  alt="Hackathon Guide"
-                  className="w-full h-32 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300"
-                />
+                {/* Blog Preview */}
+                <div className="mb-4 p-3 bg-gradient-to-r from-blue-50/10 to-blue-100/10 rounded-lg border border-blue-200/20">
+                  <h4 className="font-medium text-sm mb-2 text-blue-300">Latest: "Google Interview Secrets"</h4>
+                  <p className="text-xs text-muted-foreground mb-2">How to crack System Design rounds...</p>
+                  <div className="text-xs text-blue-400 hover:underline cursor-pointer">Read more →</div>
+                </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Win hackathons and secure PPIs with our guide
+                  Weekly updates on interview tips, career guidance, and industry trends
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Unstop</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Devfolio</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Hack2Skill</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Weekly Posts</Badge>
+                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Expert Tips</Badge>
                 </div>
                 <Button className="w-full button-3d bg-gradient-to-r from-blue-700 to-blue-800 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
-                  Explore Hackathons
+                  Read Blogs
                 </Button>
               </CardContent>
             </Card>
-          </Link>
 
-          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
-                  <Star className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">FANG Toolkit</CardTitle>
-                  <CardDescription>Build Like a Pro, Crack Like a Legend</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <img 
-                src="https://i.postimg.cc/fWp52mHs/th.jpg" 
-                alt="FANG Toolkit"
-                className="w-full h-32 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300"
-              />
-              <p className="text-sm text-muted-foreground mb-4">
-                FANG-ready projects and interview preparation
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">LLD</Badge>
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">HLD</Badge>
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">System Design</Badge>
-              </div>
-              <Button className="w-full button-3d bg-gradient-to-r from-blue-500 to-blue-600 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
-                Build Projects
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Link to="/resume-tips">
+            {/* Interview Prep Simulator */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
-                    <FileText className="h-6 w-6 text-white" />
+                  <div className="p-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                    <Code className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors white-text-shadow animate-fade-in">Diamond Resume</CardTitle>
-                    <CardDescription>AI-Powered Resume Analyzer</CardDescription>
+                    <CardTitle className="text-lg group-hover:text-purple-600 transition-colors white-text-shadow">💡 Interview Simulator</CardTitle>
+                    <CardDescription>Real-time coding practice environment</CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <img 
-                  src="https://i.postimg.cc/5NqJf4QX/infographic-resume-template-header.png" 
-                  alt="Diamond Resume"
-                  className="w-full h-32 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300"
-                />
+                {/* Code Editor Mockup */}
+                <div className="mb-4 bg-slate-900 rounded-lg p-3 border border-slate-700">
+                  <div className="text-xs font-mono text-green-400 mb-1">// Two Sum Problem</div>
+                  <div className="text-xs font-mono text-slate-300">function twoSum(nums, target) {</div>
+                  <div className="text-xs font-mono text-slate-300 ml-4">const map = new Map();</div>
+                  <div className="text-xs font-mono text-blue-400 ml-4 animate-pulse">|</div>
+                </div>
                 <p className="text-sm text-muted-foreground mb-4">
-                  College student hacks for FANG-ready resumes
+                  Practice with real interview questions and get instant feedback
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">ATS Bypass</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Keywords</Badge>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Templates</Badge>
+                  <Badge variant="secondary" className="bg-purple-100 text-purple-800 animate-pulse">Live Coding</Badge>
+                  <Badge variant="secondary" className="bg-purple-100 text-purple-800 animate-pulse">Auto-grading</Badge>
                 </div>
-                <Button className="w-full button-3d bg-gradient-to-r from-blue-600 to-blue-700 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
-                  Analyze Resume
+                <Button className="w-full button-3d bg-gradient-to-r from-purple-500 to-purple-600 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                  Start Practice
                 </Button>
               </CardContent>
             </Card>
-          </Link>
 
-          <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
-            <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
-                  <Bot className="h-6 w-6 text-white" />
+            {/* Smart Reminders */}
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-green-500 to-green-600 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                    <Calendar className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg group-hover:text-green-600 transition-colors white-text-shadow">🔔 Smart Reminders</CardTitle>
+                    <CardDescription>Never miss your practice sessions</CardDescription>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="text-lg group-hover:text-blue-700 transition-colors white-text-shadow animate-fade-in">AI Guide</CardTitle>
-                  <CardDescription>Personal Coding Companion</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {/* Calendar/Task UI Preview */}
+                <div className="mb-4 space-y-2">
+                  <div className="flex items-center gap-2 p-2 bg-green-50/10 rounded border-l-4 border-green-500">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs">Daily DSA Practice - 6:00 PM</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 bg-blue-50/10 rounded border-l-4 border-blue-500">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs">Codeforces Contest - Tomorrow</span>
+                  </div>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <img 
-                src="https://i.postimg.cc/Jz8nDtRb/3d-artificial-intelligence-ai-image-humanoid-head-robotic-face-analyzing-flow-big-data.jpg" 
-                alt="AI Guide"
-                className="w-full h-32 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300"
-              />
-              <p className="text-sm text-muted-foreground mb-4">
-                GPT-powered roadmap and problem suggestions
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Roadmap Gen</Badge>
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">Problem Rec</Badge>
-                <Badge variant="secondary" className="bg-blue-100 text-blue-800 animate-pulse">24/7 Support</Badge>
-              </div>
-              <Button 
-                className="w-full button-3d bg-gradient-to-r from-blue-700 to-blue-800 text-white white-glow hover:scale-105 transition-transform duration-300" 
-                variant="outline"
-                onClick={() => {
-                  const chatbot = document.querySelector('[data-chatbot]');
-                  if (chatbot) {
-                    chatbot.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Chat with AI
-              </Button>
-            </CardContent>
-          </Card>
+                <p className="text-sm text-muted-foreground mb-4">
+                  AI-powered scheduling to maintain consistent practice habits
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="secondary" className="bg-green-100 text-green-800 animate-pulse">AI Scheduling</Badge>
+                  <Badge variant="secondary" className="bg-green-100 text-green-800 animate-pulse">Push Notifications</Badge>
+                </div>
+                <Button className="w-full button-3d bg-gradient-to-r from-green-500 to-green-600 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                  Set Reminders
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* CP Battles Demo */}
+            <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-gradient-to-r from-red-500 to-red-600 rounded-xl group-hover:scale-110 transition-transform white-glow animate-pulse">
+                    <Gamepad2 className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg group-hover:text-red-600 transition-colors white-text-shadow">🎮 CP Battle Arena</CardTitle>
+                    <CardDescription>Compete with peers in real-time</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                {/* Battle Interface Preview */}
+                <div className="mb-4 bg-gradient-to-r from-red-50/10 to-orange-50/10 rounded-lg p-3 border border-red-200/20">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-xs font-bold text-red-400">Live Battle</span>
+                    <span className="text-xs text-orange-400">⏱️ 25:30</span>
+                  </div>
+                  <div className="text-xs text-muted-foreground">You vs @coder_ninja</div>
+                  <div className="text-xs text-green-400 mt-1">🟢 Connected to battle room</div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Real-time competitive programming battles with live leaderboards
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="secondary" className="bg-red-100 text-red-800 animate-pulse">Live Battles</Badge>
+                  <Badge variant="secondary" className="bg-red-100 text-red-800 animate-pulse">Leaderboards</Badge>
+                </div>
+                <Button className="w-full button-3d bg-gradient-to-r from-red-500 to-red-600 text-white white-glow hover:scale-105 transition-transform duration-300" variant="outline">
+                  Join Battle
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Top Practice Platforms Section with Logos */}
@@ -402,16 +435,24 @@ const Index = () => {
           </Card>
         </section>
 
-        <DSASection />
-        <CPSection />
+        <section id="roadmap">
+          <DSASection />
+        </section>
+        <section id="demo">
+          <CPSection />
+        </section>
         
         {/* CP Awareness Section */}
         <CPAwarenessSection />
         
-        <CommunitySection />
+        <section id="community">
+          <CommunitySection />
+        </section>
         
         {/* Contact Form Section */}
-        <ContactForm />
+        <section id="contact">
+          <ContactForm />
+        </section>
         
         {/* Resources Section Link */}
         <section className="text-center">

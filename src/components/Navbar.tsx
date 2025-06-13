@@ -7,12 +7,29 @@ import { Menu, X, Code, Users, Zap } from "lucide-react";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false); // Close mobile menu after clicking
+  };
+
+  const navItems = [
+    { label: "Home", href: "#hero", action: () => scrollToSection('#hero') },
+    { label: "Features", href: "#features", action: () => scrollToSection('#features') },
+    { label: "Demo", href: "#demo", action: () => scrollToSection('#demo') },
+    { label: "Roadmap", href: "#roadmap", action: () => scrollToSection('#roadmap') },
+    { label: "Community", href: "#community", action: () => scrollToSection('#community') },
+    { label: "Contact", href: "#contact", action: () => scrollToSection('#contact') }
+  ];
+
   return (
     <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b border-primary/20 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('#hero')}>
             <div className="relative">
               <div className="p-2 bg-gradient-to-br from-primary via-secondary to-accent rounded-xl pulse-glow">
                 <Zap className="h-8 w-8 text-white" />
@@ -29,12 +46,15 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="#dsa" className="text-sm font-medium hover:text-primary transition-colors hover:scale-105 transform">DSA</a>
-            <a href="#cp" className="text-sm font-medium hover:text-primary transition-colors hover:scale-105 transform">CP</a>
-            <a href="#hackathon" className="text-sm font-medium hover:text-primary transition-colors hover:scale-105 transform">Hackathons</a>
-            <a href="#fang" className="text-sm font-medium hover:text-primary transition-colors hover:scale-105 transform">FANG</a>
-            <a href="#resume" className="text-sm font-medium hover:text-primary transition-colors hover:scale-105 transform">Resume</a>
-            <a href="#community" className="text-sm font-medium hover:text-primary transition-colors hover:scale-105 transform">Community</a>
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={item.action}
+                className="text-sm font-medium hover:text-primary transition-colors hover:scale-105 transform cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
           {/* User Counter & CTA */}
@@ -43,7 +63,11 @@ export const Navbar = () => {
               <Users className="h-3 w-3" />
               2,547 Users
             </Badge>
-            <Button size="sm" className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent transition-all duration-300 transform hover:scale-105">
+            <Button 
+              size="sm" 
+              className="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent transition-all duration-300 transform hover:scale-105"
+              onClick={() => scrollToSection('#community')}
+            >
               Join Community
             </Button>
           </div>
@@ -63,18 +87,26 @@ export const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-primary/20 slide-in-up">
             <div className="flex flex-col gap-4">
-              <a href="#dsa" className="text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10">DSA</a>
-              <a href="#cp" className="text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10">CP</a>
-              <a href="#hackathon" className="text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10">Hackathons</a>
-              <a href="#fang" className="text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10">FANG</a>
-              <a href="#resume" className="text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10">Resume</a>
-              <a href="#community" className="text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10">Community</a>
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={item.action}
+                  className="text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10 text-left"
+                >
+                  {item.label}
+                </button>
+              ))}
               <div className="pt-4 border-t border-primary/20">
                 <Badge variant="secondary" className="gap-1 mb-3">
                   <Users className="h-3 w-3" />
                   2,547 Users
                 </Badge>
-                <Button className="w-full bg-gradient-to-r from-primary to-secondary">Join Community</Button>
+                <Button 
+                  className="w-full bg-gradient-to-r from-primary to-secondary"
+                  onClick={() => scrollToSection('#community')}
+                >
+                  Join Community
+                </Button>
               </div>
             </div>
           </div>

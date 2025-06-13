@@ -1,10 +1,17 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, Target, Star, Zap, Rocket, Bot } from "lucide-react";
+import { TrendingUp, Target, Star, Zap, Rocket, Bot, ChevronDown, Play, Github, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
+  const scrollToFeatures = () => {
+    const featuresSection = document.querySelector('#features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative virtual-stage py-24 overflow-hidden">
       {/* Enhanced 3D Virtual Stage with White Shining Spotlights */}
@@ -61,120 +68,45 @@ export const HeroSection = () => {
             </Badge>
           </div>
 
-          {/* Main Heading with enhanced animations */}
-          <h1 className="text-5xl md:text-8xl font-bold mb-10 text-gradient slide-in-up leading-tight white-text-shadow animate-fade-in">
-            <span className="inline-block animate-scale-in">Building</span>{" "}
-            <span className="inline-block animate-scale-in" style={{animationDelay: '0.2s'}}>India's</span>{" "}
-            <span className="inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>First</span>
+          {/* Catchy and Concise Headline */}
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 text-gradient slide-in-up leading-tight white-text-shadow animate-fade-in">
+            <span className="inline-block animate-scale-in">Empowering Students to</span>
             <br />
-            <span className="relative inline-block animate-scale-in" style={{animationDelay: '0.6s'}}>
-              <span className="inline-block animate-scale-in" style={{animationDelay: '0.8s'}}>Legendary</span>{" "}
-              <span className="inline-block animate-scale-in" style={{animationDelay: '1s'}}>Grandmaster</span>
+            <span className="inline-block animate-scale-in" style={{animationDelay: '0.2s'}}>Master CP & DSA</span>
+            <br />
+            <span className="relative inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
+              <span className="blue-gradient">Crack Your Dream Job</span>
               <div className="absolute -top-4 -right-4">
                 <Rocket className="h-12 w-12 text-accent float-animation white-glow animate-pulse" />
               </div>
             </span>
           </h1>
 
-          {/* Updated Subtitle with enhanced animations */}
-          <p className="text-2xl md:text-4xl text-muted-foreground mb-12 max-w-5xl mx-auto fade-in-scale leading-relaxed white-text-shadow animate-fade-in" style={{animationDelay: '1.2s'}}>
-            Empowering <strong className="blue-gradient animate-pulse">all college students</strong> to master <strong className="blue-gradient animate-pulse">Competitive Programming</strong>, crack <strong className="golden-gradient animate-pulse">FANG</strong>, and transform dreams into reality
-          </p>
-
-          {/* Large Format Images with NEXTFANG Logo */}
-          <div className="mb-16 animate-fade-in" style={{animationDelay: '1.5s'}}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {/* Apple Store Image with NEXTFANG Logo */}
-              <div className="relative group card-3d overflow-hidden rounded-3xl white-glow hover:scale-105 transition-transform duration-500">
-                <img 
-                  src="https://i.postimg.cc/SNbz0CZh/apple-store.jpg" 
-                  alt="Apple Store"
-                  className="w-full h-80 md:h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                  <div className="absolute bottom-6 left-6 flex items-center gap-4">
-                    <img 
-                      src="https://i.postimg.cc/4NLSdfjB/cedf0ef6-a561-4074-aa6b-8993a0ba5baa.png" 
-                      alt="NEXTFANG Logo"
-                      className="h-16 w-16 rounded-full animate-pulse white-glow"
-                    />
-                    <div>
-                      <h3 className="text-white font-bold text-2xl animate-scale-in">NEXTFANG</h3>
-                      <p className="text-white/80 animate-fade-in">Dreams to Reality</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Google Campus Image with NEXTFANG Logo */}
-              <div className="relative group card-3d overflow-hidden rounded-3xl white-glow hover:scale-105 transition-transform duration-500">
-                <img 
-                  src="https://i.postimg.cc/SK45tP40/google-head-office-campus-mountain-view-californias-usa-E94-EK8.jpg" 
-                  alt="Google Campus"
-                  className="w-full h-80 md:h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                  <div className="absolute bottom-6 right-6 flex items-center gap-4">
-                    <div className="text-right">
-                      <h3 className="text-white font-bold text-2xl animate-scale-in">NEXTFANG</h3>
-                      <p className="text-white/80 animate-fade-in">Your FANG Journey</p>
-                    </div>
-                    <img 
-                      src="https://i.postimg.cc/4NLSdfjB/cedf0ef6-a561-4074-aa6b-8993a0ba5baa.png" 
-                      alt="NEXTFANG Logo"
-                      className="h-16 w-16 rounded-full animate-pulse white-glow"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Quick tagline with animation */}
+          <div className="mb-8 animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-4xl mx-auto leading-relaxed white-text-shadow">
+              <strong className="blue-gradient animate-pulse">Real Progress</strong> • <strong className="silver-gradient animate-pulse">Smart Guidance</strong> • <strong className="golden-gradient animate-pulse">Battle-Tested Tools</strong>
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Join thousands of students already transforming their coding journey with India's most comprehensive CP platform
+            </p>
           </div>
 
-          {/* Company Showcase with Geometric Shapes */}
-          <div className="flex justify-center items-center gap-8 mb-12 flex-wrap animate-fade-in" style={{animationDelay: '1.8s'}}>
-            {/* Google - Square */}
-            <div className="geometric-card square bg-gradient-to-r from-primary/10 to-secondary/10 white-glow hover:scale-110 transition-transform duration-300">
-              <img 
-                src="https://i.postimg.cc/SK45tP40/google-head-office-campus-mountain-view-californias-usa-E94-EK8.jpg" 
-                alt="Google"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Amazon - Circle */}
-            <div className="geometric-card circle bg-gradient-to-r from-accent/10 to-primary/10 white-glow hover:scale-110 transition-transform duration-300">
-              <img 
-                src="https://i.postimg.cc/NjrMs5Z8/maxresdefault.jpg" 
-                alt="Amazon"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Apple - Square */}
-            <div className="geometric-card square bg-gradient-to-r from-secondary/10 to-accent/10 white-glow hover:scale-110 transition-transform duration-300">
-              <img 
-                src="https://i.postimg.cc/SNbz0CZh/apple-store.jpg" 
-                alt="Apple"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Microsoft - Circle */}
-            <div className="geometric-card circle bg-gradient-to-r from-primary/10 to-accent/10 white-glow hover:scale-110 transition-transform duration-300">
-              <img 
-                src="https://i.postimg.cc/8PrzcMWK/maxresdefault-3.jpg" 
-                alt="Microsoft"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* CTA Buttons with enhanced animations */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-20 animate-fade-in" style={{animationDelay: '2s'}}>
-            <Button size="lg" className="gap-4 text-xl px-12 py-8 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent card-3d pulse-glow-white white-glow hover:scale-110 transition-all duration-300 animate-scale-in">
+          {/* CTA Buttons with See Features */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 animate-fade-in" style={{animationDelay: '0.8s'}}>
+            <Button size="lg" className="gap-4 text-xl px-12 py-6 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent card-3d pulse-glow-white white-glow hover:scale-110 transition-all duration-300 animate-scale-in">
               <TrendingUp className="h-6 w-6 animate-pulse" />
               Start Your Journey
             </Button>
-            <Button variant="outline" size="lg" className="gap-4 text-xl px-12 py-8 border-2 border-primary/40 hover:bg-primary/20 card-3d white-glow hover:scale-110 transition-all duration-300 animate-scale-in" style={{animationDelay: '0.2s'}}>
-              <Target className="h-6 w-6 animate-pulse" />
-              Explore Resources
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="gap-4 text-xl px-12 py-6 border-2 border-primary/40 hover:bg-primary/20 card-3d white-glow hover:scale-110 transition-all duration-300 animate-scale-in" 
+              style={{animationDelay: '0.2s'}}
+              onClick={scrollToFeatures}
+            >
+              <ChevronDown className="h-6 w-6 animate-pulse" />
+              See Features
             </Button>
             <Link to="#" onClick={() => {
               const chatbot = document.querySelector('[data-chatbot]');
@@ -182,25 +114,100 @@ export const HeroSection = () => {
                 chatbot.scrollIntoView({ behavior: 'smooth' });
               }
             }}>
-              <Button variant="outline" size="lg" className="gap-4 text-xl px-12 py-8 border-2 border-accent/40 hover:bg-accent/20 card-3d white-glow hover:scale-110 transition-all duration-300 animate-scale-in" style={{animationDelay: '0.4s'}}>
+              <Button variant="outline" size="lg" className="gap-4 text-xl px-12 py-6 border-2 border-accent/40 hover:bg-accent/20 card-3d white-glow hover:scale-110 transition-all duration-300 animate-scale-in" style={{animationDelay: '0.4s'}}>
                 <Bot className="h-6 w-6 animate-pulse" />
-                AI Guide
+                AI Mentor
               </Button>
             </Link>
           </div>
 
-          {/* Mission Statement with enhanced animations */}
-          <div className="glass-morphism border-2 border-primary/30 rounded-3xl p-10 max-w-5xl mx-auto card-3d pulse-glow-white white-glow animate-fade-in hover:scale-105 transition-transform duration-500" style={{animationDelay: '2.2s'}}>
+          {/* Demo Video Section */}
+          <div className="mb-16 animate-fade-in" style={{animationDelay: '1s'}}>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative group card-3d overflow-hidden rounded-3xl white-glow hover:scale-105 transition-transform duration-500 bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-2 border-blue-400/30">
+                <div className="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="mb-6">
+                      <Play className="h-20 w-20 text-primary mx-auto animate-pulse white-glow" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-4 white-text-shadow">
+                      See NEXTFANG in Action
+                    </h3>
+                    <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+                      Watch how we help students master competitive programming and crack their dream companies in just 2 minutes
+                    </p>
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 white-glow hover:scale-110 transition-all duration-300">
+                      <Play className="h-5 w-5 mr-2" />
+                      Watch Demo
+                    </Button>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Stats & Proof */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 animate-fade-in" style={{animationDelay: '1.2s'}}>
+            <div className="card-3d glass-morphism p-6 rounded-2xl white-glow hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl font-bold text-primary mb-2 white-text-shadow">2,547+</div>
+              <div className="text-muted-foreground">Active Students</div>
+            </div>
+            <div className="card-3d glass-morphism p-6 rounded-2xl white-glow hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl font-bold text-secondary mb-2 white-text-shadow">150+</div>
+              <div className="text-muted-foreground">FANG Placements</div>
+            </div>
+            <div className="card-3d glass-morphism p-6 rounded-2xl white-glow hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl font-bold text-accent mb-2 white-text-shadow">98%</div>
+              <div className="text-muted-foreground">Success Rate</div>
+            </div>
+          </div>
+
+          {/* Dev Details Section */}
+          <div className="glass-morphism border-2 border-primary/30 rounded-3xl p-8 max-w-5xl mx-auto card-3d pulse-glow-white white-glow animate-fade-in hover:scale-105 transition-transform duration-500" style={{animationDelay: '1.4s'}}>
             <div className="flex items-center justify-center gap-4 mb-6">
               <Zap className="h-8 w-8 text-primary floating-3d white-glow animate-pulse" />
               <h3 className="text-2xl font-bold text-gradient white-text-shadow animate-scale-in">
-                NEXTFANG Mission
+                🚧 Ongoing Development
               </h3>
-              <Zap className="h-8 w-8 text-accent floating-3d white-glow animate-pulse" />
             </div>
-            <p className="text-lg text-muted-foreground leading-relaxed white-text-shadow animate-fade-in" style={{animationDelay: '2.5s'}}>
-              <strong className="blue-gradient animate-pulse">NEXTFANG</strong> is India's digital movement toward creating the next wave of world-class competitive programmers, project innovators, and product engineers. This is where <em className="silver-gradient animate-pulse">dreamers become developers</em>, and <em className="golden-gradient animate-pulse">developers become legends</em>.
-            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+              <div className="text-left">
+                <h4 className="font-bold text-lg mb-4 text-primary white-text-shadow">Tech Stack</h4>
+                <div className="space-y-2 text-muted-foreground">
+                  <div>• React + TypeScript</div>
+                  <div>• Tailwind CSS + Shadcn UI</div>
+                  <div>• Vite + React Router</div>
+                  <div>• Tanstack Query</div>
+                </div>
+              </div>
+              
+              <div className="text-left">
+                <h4 className="font-bold text-lg mb-4 text-secondary white-text-shadow">Future Plans</h4>
+                <div className="space-y-2 text-muted-foreground">
+                  <div>• Advanced AI Mentor</div>
+                  <div>• Resume Builder Pro</div>
+                  <div>• Live CP Battles</div>
+                  <div>• Company-wise Prep</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button variant="outline" size="sm" className="gap-2 border-primary/40 hover:bg-primary/20 white-glow hover:scale-105 transition-all duration-300">
+                <Github className="h-4 w-4" />
+                ✅ GitHub Repo
+              </Button>
+              <Button variant="outline" size="sm" className="gap-2 border-secondary/40 hover:bg-secondary/20 white-glow hover:scale-105 transition-all duration-300">
+                <FileText className="h-4 w-4" />
+                ✅ Pitch Deck
+              </Button>
+              <Button variant="outline" size="sm" className="gap-2 border-accent/40 hover:bg-accent/20 white-glow hover:scale-105 transition-all duration-300">
+                <Target className="h-4 w-4" />
+                ✅ Working Prototype
+              </Button>
+            </div>
           </div>
         </div>
       </div>
