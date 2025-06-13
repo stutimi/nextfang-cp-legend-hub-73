@@ -169,7 +169,7 @@ const Index = () => {
               <CardContent>
                 <div className="mb-4 bg-slate-900 rounded-lg p-3 border border-slate-700">
                   <div className="text-xs font-mono text-green-400 mb-1">// Two Sum Problem</div>
-                  <div className="text-xs font-mono text-slate-300">function twoSum(nums, target) {</div>
+                  <div className="text-xs font-mono text-slate-300">function twoSum(nums, target) {`{`}</div>
                   <div className="text-xs font-mono text-slate-300 ml-4">const map = new Map();</div>
                   <div className="text-xs font-mono text-blue-400 ml-4 animate-pulse">|</div>
                 </div>
