@@ -2,7 +2,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Menu, X, Code, Users, Zap } from "lucide-react";
+import { Menu, X, Code, Users, Zap, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +31,20 @@ export const Navbar = () => {
     { label: "Contact", href: "#contact", action: () => scrollToSection('#contact') }
   ];
 
+  const toolsItems = [
+    { label: "CP Dictionary", href: "/cp-dictionary" },
+    { label: "Tricks & Tips", href: "/cp-tricks-tips" },
+    { label: "Language Translation", href: "/language-translation" },
+    { label: "DSA Mastery", href: "/dsa-mastery" },
+    { label: "All Resources", href: "/resources" }
+  ];
+
   return (
     <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b border-primary/20 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('#hero')}>
+          <Link to="/" className="flex items-center gap-3 cursor-pointer">
             <div className="relative">
               <div className="p-2 bg-gradient-to-br from-primary via-secondary to-accent rounded-xl pulse-glow">
                 <Zap className="h-8 w-8 text-white" />
@@ -42,7 +57,7 @@ export const Navbar = () => {
               </h1>
               <p className="text-xs text-muted-foreground">Building India's First LGM</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
@@ -55,6 +70,25 @@ export const Navbar = () => {
                 {item.label}
               </button>
             ))}
+            
+            {/* Tools Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="flex items-center gap-1">
+                  Tools
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                {toolsItems.map((tool) => (
+                  <DropdownMenuItem key={tool.label} asChild>
+                    <Link to={tool.href} className="cursor-pointer">
+                      {tool.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* User Counter & CTA */}
@@ -96,6 +130,22 @@ export const Navbar = () => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Mobile Tools Section */}
+              <div className="pt-2 border-t border-primary/20">
+                <div className="text-sm font-medium text-muted-foreground mb-2 px-2">Tools</div>
+                {toolsItems.map((tool) => (
+                  <Link
+                    key={tool.label}
+                    to={tool.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-sm font-medium hover:text-primary transition-colors p-2 rounded hover:bg-primary/10"
+                  >
+                    {tool.label}
+                  </Link>
+                ))}
+              </div>
+              
               <div className="pt-4 border-t border-primary/20">
                 <Badge variant="secondary" className="gap-1 mb-3">
                   <Users className="h-3 w-3" />

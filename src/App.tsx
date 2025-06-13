@@ -11,6 +11,9 @@ import Resources from "./pages/Resources";
 import ResumeTips from "./pages/ResumeTips";
 import DSAMastery from "./pages/DSAMastery";
 import HackathonGuide from "./pages/HackathonGuide";
+import CPDictionary from "./pages/CPDictionary";
+import CPTricksAndTips from "./pages/CPTricksAndTips";
+import LanguageTranslation from "./pages/LanguageTranslation";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +30,9 @@ const App = () => (
           <Route path="/resume-tips" element={<ResumeTips />} />
           <Route path="/dsa-mastery" element={<DSAMastery />} />
           <Route path="/hackathon-guide" element={<HackathonGuide />} />
+          <Route path="/cp-dictionary" element={<CPDictionary />} />
+          <Route path="/cp-tricks-tips" element={<CPTricksAndTips />} />
+          <Route path="/language-translation" element={<LanguageTranslation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
