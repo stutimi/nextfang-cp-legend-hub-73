@@ -6,9 +6,7 @@ Welcome to your Lovable project! This is a competitive programming and DSA learn
 
 ## 🌐 Project Info
 
-**Live Demo**: [NEXTFAANG Platform](https://nextfang-cp-legend-hub-59.lovable.app/)
-
-**Lovable URL**: [Edit in Lovable](https://lovable.dev/projects/0aa7af2e-318b-4b38-9fea-5d634e70a97a)
+**Live Demo**: [NEXTFAANG Platform](https://nextfang-cp-legend-hub-89.lovable.app/)
 
 ---
 
