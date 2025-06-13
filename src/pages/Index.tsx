@@ -24,12 +24,9 @@ const Index = () => {
       </section>
       <StatsSection />
       
-      {/* Visitor Stats Component */}
       <VisitorStats />
       
-      {/* Main Sections */}
       <div className="container mx-auto px-4 py-12 space-y-16">
-        {/* Interactive Feature Cards Section */}
         <section id="features" className="scroll-mt-20">
           <div className="text-center mb-12">
             <Badge variant="secondary" className="mb-4 bg-blue-900/50 border-blue-400/30 text-blue-300 hover:bg-blue-800/60 backdrop-blur-sm">
@@ -40,12 +37,11 @@ const Index = () => {
               Smart Tools for Smart Students
             </h2>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-              Experience the power of <strong className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">NEXTFANG</strong>'s comprehensive learning ecosystem
+              Experience the power of <strong className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">NEXTFANG</strong> comprehensive learning ecosystem
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Progress Charts Feature */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
@@ -59,7 +55,6 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                {/* Animated Progress Demo */}
                 <div className="mb-4 p-4 bg-gradient-to-r from-blue-50/10 to-blue-100/10 rounded-lg">
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
@@ -67,7 +62,7 @@ const Index = () => {
                       <span className="text-blue-400">78%</span>
                     </div>
                     <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full animate-pulse" style={{width: '78%'}}></div>
+                      <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full animate-pulse" style={{width: "78%"}}></div>
                     </div>
                   </div>
                 </div>
@@ -84,7 +79,6 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Interactive Roadmap Feature */}
             <Link to="/dsa-mastery">
               <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
                 <CardHeader className="pb-4">
@@ -99,18 +93,17 @@ const Index = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  {/* Interactive Roadmap Preview */}
                   <div className="mb-4 space-y-2">
-                    {['Arrays & Strings', 'Two Pointers', 'Dynamic Programming'].map((topic, index) => (
+                    {["Arrays & Strings", "Two Pointers", "Dynamic Programming"].map((topic, index) => (
                       <div key={topic} className={`p-2 rounded border-l-4 text-xs transition-all hover:scale-105 ${
-                        index === 0 ? 'border-green-500 bg-green-50/10' : 
-                        index === 1 ? 'border-blue-500 bg-blue-50/10' : 
-                        'border-gray-500 bg-gray-50/10'
+                        index === 0 ? "border-green-500 bg-green-50/10" : 
+                        index === 1 ? "border-blue-500 bg-blue-50/10" : 
+                        "border-gray-500 bg-gray-50/10"
                       }`}>
                         <div className="flex justify-between">
                           <span>{topic}</span>
-                          <span className={index === 0 ? 'text-green-400' : index === 1 ? 'text-blue-400' : 'text-gray-400'}>
-                            {index === 0 ? '✓' : index === 1 ? '→' : '○'}
+                          <span className={index === 0 ? "text-green-400" : index === 1 ? "text-blue-400" : "text-gray-400"}>
+                            {index === 0 ? "✓" : index === 1 ? "→" : "○"}
                           </span>
                         </div>
                       </div>
@@ -130,7 +123,6 @@ const Index = () => {
               </Card>
             </Link>
 
-            {/* Blog Preview Feature */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
@@ -144,7 +136,6 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                {/* Blog Preview */}
                 <div className="mb-4 p-3 bg-gradient-to-r from-blue-50/10 to-blue-100/10 rounded-lg border border-blue-200/20">
                   <h4 className="font-medium text-sm mb-2 text-blue-300">Latest: "Google Interview Secrets"</h4>
                   <p className="text-xs text-muted-foreground mb-2">How to crack System Design rounds...</p>
@@ -163,7 +154,6 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Interview Prep Simulator */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
@@ -177,7 +167,6 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                {/* Code Editor Mockup */}
                 <div className="mb-4 bg-slate-900 rounded-lg p-3 border border-slate-700">
                   <div className="text-xs font-mono text-green-400 mb-1">// Two Sum Problem</div>
                   <div className="text-xs font-mono text-slate-300">function twoSum(nums, target) {</div>
@@ -197,7 +186,6 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Smart Reminders */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
@@ -211,7 +199,6 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                {/* Calendar/Task UI Preview */}
                 <div className="mb-4 space-y-2">
                   <div className="flex items-center gap-2 p-2 bg-green-50/10 rounded border-l-4 border-green-500">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -235,7 +222,6 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* CP Battles Demo */}
             <Card className="group card-3d hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer h-full white-glow hover:scale-105">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3">
@@ -249,7 +235,6 @@ const Index = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                {/* Battle Interface Preview */}
                 <div className="mb-4 bg-gradient-to-r from-red-50/10 to-orange-50/10 rounded-lg p-3 border border-red-200/20">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-bold text-red-400">Live Battle</span>
@@ -273,7 +258,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Top Practice Platforms Section with Logos */}
         <section className="mb-16">
           <Card className="card-3d glass-morphism border-2 border-blue-200/20 white-glow hover:scale-[1.02] transition-transform duration-500">
             <CardHeader>
@@ -322,7 +306,6 @@ const Index = () => {
           </Card>
         </section>
 
-        {/* Country-wise Performance Section */}
         <section className="mb-16">
           <Card className="card-3d glass-morphism border-2 border-blue-200/20 white-glow hover:scale-[1.02] transition-transform duration-500">
             <CardHeader>
@@ -377,7 +360,6 @@ const Index = () => {
           </Card>
         </section>
 
-        {/* Fun Facts & Jokes Section */}
         <section className="mb-16">
           <Card className="card-3d glass-morphism border-2 border-blue-200/20 white-glow hover:scale-[1.02] transition-transform duration-500">
             <CardHeader>
@@ -397,7 +379,6 @@ const Index = () => {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Fun Facts */}
                 <div className="space-y-6">
                   <h3 className="font-bold text-2xl text-primary white-text-shadow animate-scale-in">🧠 Fascinating Facts</h3>
                   {[
@@ -413,7 +394,6 @@ const Index = () => {
                   ))}
                 </div>
                 
-                {/* CP Jokes */}
                 <div className="space-y-6">
                   <h3 className="font-bold text-2xl text-accent white-text-shadow animate-scale-in">🤣 CP Jokes</h3>
                   {[
@@ -442,19 +422,16 @@ const Index = () => {
           <CPSection />
         </section>
         
-        {/* CP Awareness Section */}
         <CPAwarenessSection />
         
         <section id="community">
           <CommunitySection />
         </section>
         
-        {/* Contact Form Section */}
         <section id="contact">
           <ContactForm />
         </section>
         
-        {/* Resources Section Link */}
         <section className="text-center">
           <Link to="/resources">
             <Card className="card-3d glass-morphism border-2 border-blue-200/20 p-12 cursor-pointer hover:border-blue-300/40 transition-all white-glow hover:scale-105 duration-500">
