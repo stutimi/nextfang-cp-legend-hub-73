@@ -1,7 +1,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, Star, TrendingUp } from "lucide-react";
+import { Building2, Star, TrendingUp, Target, Heart } from "lucide-react";
 
 export const CompanyShowcase = () => {
   const companies = [
@@ -11,7 +11,7 @@ export const CompanyShowcase = () => {
       alt: "Google Campus",
       description: "Leading tech innovation",
       color: "from-blue-500 to-green-500",
-      shape: "rectangle"
+      shape: "square"
     },
     {
       name: "Apple",
@@ -19,7 +19,7 @@ export const CompanyShowcase = () => {
       alt: "Apple Store",
       description: "Design excellence",
       color: "from-gray-500 to-slate-600",
-      shape: "square"
+      shape: "circle"
     },
     {
       name: "Meta",
@@ -27,7 +27,7 @@ export const CompanyShowcase = () => {
       alt: "Meta Office",
       description: "Social innovation",
       color: "from-blue-600 to-purple-600",
-      shape: "circle"
+      shape: "square"
     },
     {
       name: "ICPC Champions",
@@ -35,7 +35,7 @@ export const CompanyShowcase = () => {
       alt: "ICPC World Champions",
       description: "Programming excellence",
       color: "from-yellow-500 to-orange-500",
-      shape: "square"
+      shape: "circle"
     },
     {
       name: "IOI Competition",
@@ -43,7 +43,7 @@ export const CompanyShowcase = () => {
       alt: "IOI 2023",
       description: "Global programming olympiad",
       color: "from-green-500 to-emerald-500",
-      shape: "circle"
+      shape: "square"
     },
     {
       name: "CP Excellence",
@@ -51,7 +51,7 @@ export const CompanyShowcase = () => {
       alt: "Competitive Programming Contest",
       description: "Competitive programming mastery",
       color: "from-red-500 to-pink-500",
-      shape: "rectangle"
+      shape: "circle"
     },
     {
       name: "Tech Innovation",
@@ -67,7 +67,7 @@ export const CompanyShowcase = () => {
       alt: "Innovation Hub",
       description: "Next-gen solutions",
       color: "from-cyan-500 to-blue-500",
-      shape: "rectangle"
+      shape: "circle"
     },
     {
       name: "Programming Contest",
@@ -75,7 +75,7 @@ export const CompanyShowcase = () => {
       alt: "Programming Competition",
       description: "Competitive spirit",
       color: "from-indigo-500 to-purple-500",
-      shape: "circle"
+      shape: "square"
     }
   ];
 
@@ -84,92 +84,115 @@ export const CompanyShowcase = () => {
       case 'circle':
         return 'aspect-square rounded-full';
       case 'square':
-        return 'aspect-square rounded-2xl';
-      case 'rectangle':
+        return 'aspect-square rounded-3xl';
       default:
-        return 'aspect-video rounded-2xl';
+        return 'aspect-square rounded-3xl';
     }
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-      {/* Background Effects */}
+    <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      {/* Enhanced Background Effects with Animation */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/30 to-purple-900/30 animate-pulse"></div>
+        <div className="absolute top-20 left-20 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-floating-3d"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-green-500/20 rounded-full blur-3xl animate-floating-3d" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-red-500/15 rounded-full blur-3xl animate-floating-3d" style={{animationDelay: '4s'}}></div>
+        
+        {/* Indian Flag Colors Animation */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-orange-500/10 to-green-500/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-6 gap-2 bg-blue-900/50 border-blue-400/30 text-blue-300 hover:bg-blue-800/60 backdrop-blur-sm animate-fade-in">
-            <Building2 className="h-4 w-4" />
-            Dream Destinations
+        <div className="text-center mb-20">
+          <Badge variant="secondary" className="mb-8 gap-3 bg-gradient-to-r from-orange-900/50 to-green-900/50 border-orange-400/30 text-orange-200 hover:bg-orange-800/60 backdrop-blur-sm animate-fade-in card-3d white-glow">
+            <Heart className="h-5 w-5 animate-pulse text-red-400" />
+            <span className="flex items-center gap-2">
+              Building Dreams
+              <span className="text-orange-400">🇮🇳</span>
+            </span>
           </Badge>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-cyan-300 bg-clip-text text-transparent animate-fade-in">
-            Where <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">NEXTFAANG</span> Students Excel
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-orange-300 via-white to-green-300 bg-clip-text text-transparent animate-fade-in leading-tight">
+            Our Vision for <br />
+            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent animate-scale-in" style={{animationDelay: '0.3s'}}>NEXTFAANG</span>
           </h2>
           
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Join the ranks of our successful alumni working at the world's most prestigious tech companies and winning global programming competitions
-          </p>
+          <div className="max-w-5xl mx-auto animate-fade-in" style={{animationDelay: '0.5s'}}>
+            <p className="text-2xl text-blue-200 mb-6 leading-relaxed white-text-shadow">
+              Our aim is to build a <strong className="bg-gradient-to-r from-orange-400 to-green-400 bg-clip-text text-transparent animate-pulse">thriving community</strong> where Indian students excel in global programming competitions
+            </p>
+            <p className="text-xl text-blue-300 leading-relaxed white-text-shadow">
+              Together, we'll make India proud on the world stage of competitive programming and technology innovation 🚀
+            </p>
+          </div>
         </div>
 
-        {/* Company Grid with Mixed Shapes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Enhanced Company Grid with Alternating Animations */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
           {companies.map((company, index) => (
             <Card 
               key={company.name} 
-              className="group relative overflow-hidden border-2 border-blue-400/20 bg-slate-800/50 backdrop-blur-sm hover:border-blue-400/60 transition-all duration-500 hover:scale-105 animate-fade-in"
-              style={{animationDelay: `${index * 0.1}s`}}
+              className="group relative overflow-hidden border-2 border-blue-400/30 bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm hover:border-orange-400/60 transition-all duration-700 hover:scale-110 card-3d white-glow animate-fade-in"
+              style={{
+                animationDelay: `${index * 0.15}s`,
+                transform: index % 2 === 0 ? 'rotate(-2deg)' : 'rotate(2deg)'
+              }}
             >
               <CardContent className="p-0">
-                <div className="relative overflow-hidden">
-                  <div className={`overflow-hidden ${getImageClasses(company.shape)}`}>
+                <div className="relative overflow-hidden group-hover:animate-pulse">
+                  <div className={`overflow-hidden ${getImageClasses(company.shape)} group-hover:scale-105 transition-transform duration-500`}>
                     <img 
                       src={company.image} 
                       alt={company.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:brightness-110 group-hover:saturate-150"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent group-hover:from-black/70"></div>
                   
-                  {/* Company Info Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${company.color} rounded-full text-white font-semibold mb-2 text-sm`}>
-                      <Star className="h-4 w-4" />
+                  {/* Enhanced Company Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-500 group-hover:translate-y-0">
+                    <div className={`inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r ${company.color} rounded-full text-white font-bold mb-3 text-base shadow-2xl white-glow animate-pulse`}>
+                      <Star className="h-5 w-5 animate-spin" style={{animationDuration: '3s'}} />
                       {company.name}
                     </div>
-                    <p className="text-white/80 text-sm">{company.description}</p>
+                    <p className="text-white font-medium text-base animate-fade-in">{company.description}</p>
                   </div>
 
-                  {/* Hover Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Enhanced Hover Effects with Indian Flag Colors */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-white/10 to-green-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse"></div>
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <Target className="h-6 w-6 text-yellow-400 animate-spin" style={{animationDuration: '4s'}} />
+                  </div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Success Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in" style={{animationDelay: '0.8s'}}>
-          <div className="text-center p-8 bg-gradient-to-br from-blue-900/30 to-cyan-900/30 rounded-2xl border border-blue-400/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-            <div className="text-4xl font-bold text-cyan-300 mb-2">150+</div>
-            <div className="text-blue-200">FAANG Placements</div>
-            <TrendingUp className="h-6 w-6 text-cyan-400 mx-auto mt-2 animate-pulse" />
+        {/* Enhanced Success Stats with Indian Pride Theme */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 animate-fade-in" style={{animationDelay: '1.2s'}}>
+          <div className="text-center p-10 bg-gradient-to-br from-orange-900/40 to-orange-800/40 rounded-3xl border-2 border-orange-400/30 backdrop-blur-sm hover:scale-110 transition-all duration-500 card-3d white-glow">
+            <div className="text-5xl font-bold text-orange-300 mb-4 animate-pulse">🎯</div>
+            <div className="text-6xl font-bold text-orange-200 mb-3 animate-scale-in">Our Goal</div>
+            <div className="text-orange-100 text-lg">Building India's CP Community</div>
+            <TrendingUp className="h-8 w-8 text-orange-400 mx-auto mt-4 animate-bounce" />
           </div>
           
-          <div className="text-center p-8 bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-2xl border border-purple-400/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-            <div className="text-4xl font-bold text-purple-300 mb-2">₹45L+</div>
-            <div className="text-purple-200">Average Package</div>
-            <Star className="h-6 w-6 text-purple-400 mx-auto mt-2 animate-pulse" />
+          <div className="text-center p-10 bg-gradient-to-br from-green-900/40 to-green-800/40 rounded-3xl border-2 border-green-400/30 backdrop-blur-sm hover:scale-110 transition-all duration-500 card-3d white-glow">
+            <div className="text-5xl font-bold text-green-300 mb-4 animate-pulse">🏆</div>
+            <div className="text-6xl font-bold text-green-200 mb-3 animate-scale-in">Excellence</div>
+            <div className="text-green-100 text-lg">Global Competition Success</div>
+            <Star className="h-8 w-8 text-green-400 mx-auto mt-4 animate-spin" style={{animationDuration: '3s'}} />
           </div>
           
-          <div className="text-center p-8 bg-gradient-to-br from-green-900/30 to-emerald-900/30 rounded-2xl border border-green-400/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-            <div className="text-4xl font-bold text-green-300 mb-2">98%</div>
-            <div className="text-green-200">Success Rate</div>
-            <Building2 className="h-6 w-6 text-green-400 mx-auto mt-2 animate-pulse" />
+          <div className="text-center p-10 bg-gradient-to-br from-blue-900/40 to-blue-800/40 rounded-3xl border-2 border-blue-400/30 backdrop-blur-sm hover:scale-110 transition-all duration-500 card-3d white-glow">
+            <div className="text-5xl font-bold text-blue-300 mb-4 animate-pulse">🇮🇳</div>
+            <div className="text-6xl font-bold text-blue-200 mb-3 animate-scale-in">Pride</div>
+            <div className="text-blue-100 text-lg">Making India Proud</div>
+            <Building2 className="h-8 w-8 text-blue-400 mx-auto mt-4 animate-pulse" />
           </div>
         </div>
       </div>
