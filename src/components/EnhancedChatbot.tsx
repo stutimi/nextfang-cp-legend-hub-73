@@ -1,10 +1,9 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Bot, Send, X, MessageCircle, Minimize2, Mic, MicOff, Volume2, VolumeX, Settings } from "lucide-react";
+import { Bot, Send, X, MessageCircle, Mic, MicOff, Volume2, VolumeX, Settings, Sparkles, Brain, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface Message {
@@ -21,13 +20,14 @@ export const EnhancedChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       type: "bot",
-      content: "Hi! I'm your NEXTFAANG AI assistant with advanced voice support! 🎤 Building India's First LGM for competitive programming. I can help with CP roadmaps, problem recommendations, FAANG interview prep, and more! What would you like to know?",
+      content: "🚀 Welcome to NEXTFAANG AI Assistant! I'm here to help you master competitive programming and build your journey towards India's First LGM. Ask me anything about DSA, contests, FAANG prep, or platform features!",
       timestamp: new Date()
     }
   ]);
   const [apiKey, setApiKey] = useState("");
   const [elevenLabsKey, setElevenLabsKey] = useState("");
   const [showSettings, setShowSettings] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
 
   const { toast } = useToast();
   const recognitionRef = useRef<any>(null);
@@ -158,7 +158,16 @@ export const EnhancedChatbot = () => {
           messages: [
             {
               role: 'system',
-              content: `You are NEXTFAANG AI assistant - Building India's First LGM for competitive programming. Help with DSA, CP strategies, FAANG prep, contests, and coding interviews. Be encouraging and provide actionable advice.`
+              content: `You are NEXTFAANG AI Assistant - Building India's First LGM for competitive programming. You're an expert mentor who helps with:
+
+              🎯 Competitive Programming strategies and roadmaps
+              🧩 Data Structures & Algorithms guidance  
+              🏆 Contest preparation (Codeforces, CodeChef, AtCoder)
+              💼 FAANG interview preparation
+              🚀 Platform feature guidance and usage tips
+              📚 Learning resources and study plans
+              
+              Keep responses encouraging, practical, and focused on actionable advice. Use emojis appropriately and maintain an enthusiastic but professional tone. Always provide specific next steps when possible.`
             },
             { role: 'user', content: userMessage }
           ],
@@ -177,16 +186,18 @@ export const EnhancedChatbot = () => {
   const getStaticResponse = (userMessage: string): string => {
     const lowerMessage = userMessage.toLowerCase();
     
-    if (lowerMessage.includes("roadmap") || lowerMessage.includes("path")) {
-      return "🗺️ For NEXTFAANG CP roadmap: 1) Master Arrays/Strings 2) Learn Two Pointers & Sliding Window 3) Conquer DP & Recursion 4) Practice Graph algorithms 5) Regular contest participation. Building India's First LGM requires systematic practice!";
-    } else if (lowerMessage.includes("codeforces") || lowerMessage.includes("cf")) {
-      return "🏆 Codeforces mastery for NEXTFAANG: Start with Div 2 A/B problems, focus on implementation & math. Virtual contests are key! Aim for Expert rating (1600+) for top Indian tech companies.";
+    if (lowerMessage.includes("roadmap") || lowerMessage.includes("path") || lowerMessage.includes("guide")) {
+      return "🗺️ For NEXTFAANG CP roadmap: 1) Master Arrays/Strings 2) Learn Two Pointers & Sliding Window 3) Conquer DP & Recursion 4) Practice Graph algorithms 5) Regular contest participation. Building India's First LGM requires systematic practice! Would you like me to create a personalized roadmap for you?";
+    } else if (lowerMessage.includes("contest") || lowerMessage.includes("codeforces") || lowerMessage.includes("cf")) {
+      return "🏆 Contest strategy for NEXTFAANG success: Start with Div 2 A/B problems, focus on implementation & math. Virtual contests are key! Aim for Expert rating (1600+) for top Indian tech companies. Try our Contest Analyzer feature to track your performance!";
     } else if (lowerMessage.includes("faang") || lowerMessage.includes("interview")) {
-      return "💼 NEXTFAANG interview prep: Focus on medium/hard LeetCode problems, system design basics, and behavioral questions. Practice mock interviews and time management. You're building towards India's tech leadership!";
-    } else if (lowerMessage.includes("dsa")) {
-      return "🧩 DSA mastery path: Arrays → LinkedLists → Stacks/Queues → Trees → Graphs → DP. Use NEXTFAANG's systematic approach: Understand → Code → Optimize → Practice variants.";
+      return "💼 NEXTFAANG interview prep: Focus on medium/hard LeetCode problems, system design basics, and behavioral questions. Practice mock interviews and time management. Check out our DSA Mastery section and use the skill assessment tool!";
+    } else if (lowerMessage.includes("feature") || lowerMessage.includes("tool") || lowerMessage.includes("platform")) {
+      return "🛠️ NEXTFAANG Platform Features: 📊 Live Progress Charts 🧩 Interactive CP Roadmap 📚 CP Dictionary 💡 Tricks & Tips 🌍 Code Translation 🎮 Battle Arena. Try our Platform Guide mentor for a complete tour!";
+    } else if (lowerMessage.includes("dsa") || lowerMessage.includes("algorithm")) {
+      return "🧩 DSA mastery path: Arrays → LinkedLists → Stacks/Queues → Trees → Graphs → DP. Use NEXTFAANG's systematic approach: Understand → Code → Optimize → Practice variants. Check our DSA Mastery page for detailed roadmaps!";
     } else {
-      return "🚀 I can help with: CP roadmaps 📚 DSA guidance 🏆 Contest strategies 💼 FAANG prep 🎯 Interview tips 🤖 Building India's First LGM together! What specific area interests you?";
+      return "🚀 I can help with: 📚 CP roadmaps 🏆 Contest strategies 💼 FAANG prep 🎯 Interview tips 🛠️ Platform features 🤖 Building India's First LGM together! What specific area interests you? Try asking about our features or start with 'show me the roadmap'!";
     }
   };
 
@@ -199,10 +210,13 @@ export const EnhancedChatbot = () => {
       timestamp: new Date() 
     };
     setMessages(prev => [...prev, userMessage]);
+    setMessage("");
+    setIsTyping(true);
 
     const aiResponse = await getAIResponse(message);
     
     setTimeout(() => {
+      setIsTyping(false);
       const botMessage: Message = { 
         type: "bot", 
         content: aiResponse, 
@@ -210,40 +224,54 @@ export const EnhancedChatbot = () => {
       };
       setMessages(prev => [...prev, botMessage]);
       
-      // Auto-speak response
+      // Auto-speak response if voice is enabled
       if (elevenLabsKey || synthRef.current) {
         setTimeout(() => speakText(aiResponse), 300);
       }
-    }, 1000);
-
-    setMessage("");
+    }, 1500);
   };
 
   if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-20 z-50">
-        <Button
-          onClick={() => setIsOpen(true)}
-          size="lg"
-          className="rounded-full h-16 w-16 shadow-2xl bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 button-3d pulse-glow"
-        >
-          <MessageCircle className="h-8 w-8" />
-        </Button>
+      <div className="fixed bottom-6 right-6 z-50">
+        <div className="relative">
+          <Button
+            onClick={() => setIsOpen(true)}
+            size="lg"
+            className="rounded-full h-20 w-20 shadow-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 button-3d pulse-glow border-2 border-white/20"
+          >
+            <div className="relative">
+              <Bot className="h-10 w-10 text-white" />
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
+            </div>
+          </Button>
+          
+          {/* Floating badges around the button */}
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium animate-bounce">
+            AI Assistant
+          </div>
+          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium animate-pulse">
+            NEXTFAANG
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="fixed bottom-6 right-20 z-50 w-96 h-[500px]">
-      <Card className="h-full flex flex-col shadow-2xl card-3d glass-morphism border-2 border-red-500/30 bg-gradient-to-br from-red-500/5 to-red-600/5">
-        <CardHeader className="pb-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-t-lg">
+    <div className="fixed bottom-6 right-6 z-50 w-96 h-[600px]">
+      <Card className="h-full flex flex-col shadow-2xl card-3d glass-morphism border-2 border-blue-500/30 bg-gradient-to-br from-slate-900/95 to-blue-900/95 backdrop-blur-xl overflow-hidden">
+        <CardHeader className="pb-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-white/20 rounded-full pulse-3d">
-                <Bot className="h-5 w-5" />
+                <Brain className="h-6 w-6" />
               </div>
               <div>
-                <CardTitle className="text-lg font-bold">NEXTFAANG Assistant</CardTitle>
+                <CardTitle className="text-lg font-bold flex items-center gap-2">
+                  NEXTFAANG Assistant
+                  <Sparkles className="h-4 w-4 animate-pulse" />
+                </CardTitle>
                 <div className="text-xs opacity-90">Building India's First LGM</div>
               </div>
             </div>
@@ -261,27 +289,36 @@ export const EnhancedChatbot = () => {
               </Button>
             </div>
           </div>
-          <Badge className="w-fit text-xs bg-green-500/20 text-green-300 border-green-500/30">
-            🟢 Online • Voice Ready
-          </Badge>
+          <div className="flex gap-2">
+            <Badge className="bg-green-500/20 text-green-300 border-green-500/30 animate-pulse">
+              🟢 Online
+            </Badge>
+            <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">
+              <Zap className="h-3 w-3 mr-1" />
+              AI Powered
+            </Badge>
+          </div>
         </CardHeader>
 
         {showSettings && (
-          <div className="p-4 bg-slate-800 border-b border-red-500/30 space-y-3">
+          <div className="p-4 bg-slate-800/80 border-b border-blue-500/30 space-y-3">
             <Input
               type="password"
-              placeholder="OpenAI API Key (optional)"
+              placeholder="OpenAI API Key (for smarter responses)"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
-              className="text-xs"
+              className="text-xs bg-slate-700 border-blue-400/30 text-white"
             />
             <Input
               type="password"
-              placeholder="ElevenLabs API Key (optional)"
+              placeholder="ElevenLabs API Key (for premium voice)"
               value={elevenLabsKey}
               onChange={(e) => setElevenLabsKey(e.target.value)}
-              className="text-xs"
+              className="text-xs bg-slate-700 border-blue-400/30 text-white"
             />
+            <div className="text-xs text-blue-300">
+              💡 Add API keys for enhanced AI responses and premium voice features
+            </div>
           </div>
         )}
 
@@ -292,32 +329,47 @@ export const EnhancedChatbot = () => {
                 key={index}
                 className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}
               >
-                <div className="max-w-[80%]">
+                <div className="max-w-[85%]">
                   <div
-                    className={`p-3 rounded-2xl text-sm slide-in-3d ${
+                    className={`p-4 rounded-2xl text-sm slide-in-3d ${
                       msg.type === "user"
-                        ? "bg-gradient-to-r from-red-500 to-red-600 text-white"
-                        : "bg-gradient-to-r from-muted to-muted/80 glass-morphism"
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                        : "bg-gradient-to-r from-slate-800 to-slate-700 text-white border border-blue-400/20"
                     }`}
                     style={{animationDelay: `${index * 0.1}s`}}
                   >
                     {msg.content}
                   </div>
                   {msg.type === "bot" && (
-                    <div className="flex justify-start mt-2">
+                    <div className="flex justify-start mt-2 gap-2">
                       <Button
                         size="sm"
                         variant="ghost"
-                        className="h-6 w-6 p-0 hover:bg-red-500/20"
+                        className="h-6 w-6 p-0 hover:bg-blue-500/20 text-blue-400"
                         onClick={() => isSpeaking ? stopSpeaking() : speakText(msg.content)}
                       >
                         {isSpeaking ? <VolumeX className="h-3 w-3" /> : <Volume2 className="h-3 w-3" />}
                       </Button>
+                      <span className="text-xs text-slate-400">
+                        {msg.timestamp.toLocaleTimeString()}
+                      </span>
                     </div>
                   )}
                 </div>
               </div>
             ))}
+            
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="bg-gradient-to-r from-slate-800 to-slate-700 text-white p-4 rounded-2xl border border-blue-400/20">
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                    <div className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div ref={messagesEndRef} />
           </div>
 
@@ -326,15 +378,15 @@ export const EnhancedChatbot = () => {
               <Input
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Ask about CP, DSA, NEXTFAANG..."
-                className="text-sm pr-12 bg-gradient-to-r from-background to-muted/50 border-red-500/30 focus:border-red-500"
+                placeholder="Ask about CP, DSA, NEXTFAANG features..."
+                className="text-sm pr-12 bg-slate-800 border-blue-500/30 focus:border-blue-500 text-white"
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
               />
               <Button
                 size="sm"
                 variant="ghost"
                 className={`absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 p-0 ${
-                  isListening ? 'text-red-500 pulse-glow' : 'hover:bg-red-500/20'
+                  isListening ? 'text-red-500 pulse-glow' : 'hover:bg-blue-500/20 text-blue-400'
                 }`}
                 onClick={isListening ? stopListening : startListening}
               >
@@ -343,8 +395,9 @@ export const EnhancedChatbot = () => {
             </div>
             <Button 
               size="sm" 
-              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 button-3d"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 button-3d"
               onClick={handleSendMessage}
+              disabled={isTyping}
             >
               <Send className="h-4 w-4" />
             </Button>

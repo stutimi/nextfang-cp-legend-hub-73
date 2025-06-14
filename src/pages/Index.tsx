@@ -17,6 +17,7 @@ import { CompanyShowcase } from "@/components/CompanyShowcase";
 import { EnhancedAIMentor } from "@/components/EnhancedAIMentor";
 import { SkillAssessment } from "@/components/SkillAssessment";
 import { LiveCodingPreview } from "@/components/LiveCodingPreview";
+import { PlatformGuideMentor } from "@/components/PlatformGuideMentor";
 
 const Index = () => {
   return (
@@ -315,6 +316,7 @@ const Index = () => {
       </div>
       
       <EnhancedAIMentor />
+      <PlatformGuideMentor />
     </div>
   );
 };
