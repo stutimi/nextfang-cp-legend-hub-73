@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Chatbot } from "@/components/Chatbot";
 import { VisitorStats } from "@/components/VisitorStats";
 import { CPAwarenessSection } from "@/components/CPAwarenessSection";
+import { CompanyShowcase } from "@/components/CompanyShowcase";
 
 const Index = () => {
   return (
@@ -24,6 +26,8 @@ const Index = () => {
       <StatsSection />
       
       <VisitorStats />
+      
+      <CompanyShowcase />
       
       <div className="container mx-auto px-4 py-12 space-y-16">
         <section id="features" className="scroll-mt-20">

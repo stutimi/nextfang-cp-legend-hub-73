@@ -23,24 +23,24 @@ export const HeroSection = () => {
         {/* Background company images */}
         <div className="absolute inset-0 opacity-10">
           <img 
-            src="https://i.postimg.cc/NjrMs5Z8/maxresdefault.jpg" 
+            src="https://i.postimg.cc/XYh1bSd5/maxresdefault.jpg" 
             alt="Tech Background"
             className="absolute top-0 left-0 w-full h-full object-cover opacity-30 animate-fade-in"
           />
           <img 
-            src="https://i.postimg.cc/SNbz0CZh/apple-store.jpg" 
+            src="https://i.postimg.cc/Y9t92Vwr/apple-store.jpg" 
             alt="Apple Store"
             className="absolute top-1/4 right-0 w-1/3 h-1/3 object-cover opacity-20 rounded-l-3xl animate-fade-in"
             style={{animationDelay: '0.5s'}}
           />
           <img 
-            src="https://i.postimg.cc/SK45tP40/google-head-office-campus-mountain-view-californias-usa-E94-EK8.jpg" 
+            src="https://i.postimg.cc/rp3Jv16N/google-head-office-campus-mountain-view-californias-usa-E94-EK8.jpg" 
             alt="Google Campus"
             className="absolute bottom-1/4 left-0 w-1/3 h-1/3 object-cover opacity-20 rounded-r-3xl animate-fade-in"
             style={{animationDelay: '1s'}}
           />
           <img 
-            src="https://i.postimg.cc/RhKdS95V/Meta-Completes-Another-Round-of-Layoffs.webp" 
+            src="https://i.postimg.cc/xTXZ83YM/Meta-Completes-Another-Round-of-Layoffs.webp" 
             alt="Meta"
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/4 h-1/4 object-cover opacity-15 rounded-2xl animate-fade-in"
             style={{animationDelay: '1.5s'}}
