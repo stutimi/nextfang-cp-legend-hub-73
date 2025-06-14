@@ -14,6 +14,7 @@ import HackathonGuide from "./pages/HackathonGuide";
 import CPDictionary from "./pages/CPDictionary";
 import CPTricksAndTips from "./pages/CPTricksAndTips";
 import LanguageTranslation from "./pages/LanguageTranslation";
+import ContestAnalyzer from "./pages/ContestAnalyzer";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/cp-dictionary" element={<CPDictionary />} />
           <Route path="/cp-tricks-tips" element={<CPTricksAndTips />} />
           <Route path="/language-translation" element={<LanguageTranslation />} />
+          <Route path="/contest-analyzer" element={<ContestAnalyzer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

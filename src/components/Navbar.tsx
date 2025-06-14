@@ -32,6 +32,7 @@ export const Navbar = () => {
   ];
 
   const toolsItems = [
+    { label: "Contest Analyzer", href: "/contest-analyzer" },
     { label: "CP Dictionary", href: "/cp-dictionary" },
     { label: "Tricks & Tips", href: "/cp-tricks-tips" },
     { label: "Language Translation", href: "/language-translation" },
