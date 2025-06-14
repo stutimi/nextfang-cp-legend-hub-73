@@ -559,3 +559,183 @@
 .hover\:scale-125:hover {
   transform: scale(1.25);
 }
+
+/* Additional impressive animations for competition */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.4),
+      0 0 40px rgba(147, 197, 253, 0.2),
+      0 0 60px rgba(219, 234, 254, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 30px rgba(59, 130, 246, 0.8), 
+      0 0 60px rgba(147, 197, 253, 0.4),
+      0 0 90px rgba(219, 234, 254, 0.2);
+  }
+}
+
+@keyframes code-highlight {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(34, 197, 94, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes data-flow {
+  0% { 
+    transform: translateX(-100px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% { 
+    transform: translateX(100px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Enhanced utility classes */
+@layer utilities {
+  .matrix-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .matrix-bg::before {
+    content: '0110100101001001010010100101001010010100101001010010100101001001';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: rgba(34, 197, 94, 0.1);
+    line-height: 1.2;
+    word-wrap: break-word;
+    animation: matrix-rain 20s linear infinite;
+    pointer-events: none;
+  }
+
+  .typing-effect {
+    border-right: 2px solid rgba(59, 130, 246, 0.7);
+    animation: typing 3s steps(30, end), blink 1s infinite;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .code-line-highlight {
+    animation: code-highlight 2s ease-in-out infinite;
+  }
+
+  .data-flow {
+    animation: data-flow 3s ease-in-out infinite;
+  }
+
+  .perspective-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .perspective-card:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateZ(50px);
+  }
+
+  .holographic {
+    background: linear-gradient(
+      45deg,
+      rgba(255, 0, 150, 0.1),
+      rgba(0, 255, 255, 0.1),
+      rgba(255, 255, 0, 0.1),
+      rgba(150, 0, 255, 0.1)
+    );
+    background-size: 400% 400%;
+    animation: holographic-shift 4s ease-in-out infinite;
+  }
+
+  .neural-network {
+    position: relative;
+  }
+
+  .neural-network::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.3) 2px, transparent 2px),
+      radial-gradient(circle at 70% 80%, rgba(34, 197, 94, 0.3) 2px, transparent 2px),
+      radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.3) 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: neural-pulse 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .quantum-border {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.5), rgba(168, 85, 247, 0.5)) padding-box,
+                linear-gradient(45deg, #3b82f6, #a855f7, #06b6d4, #10b981) border-box;
+    animation: quantum-glow 3s linear infinite;
+  }
+}
+
+@keyframes holographic-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes quantum-glow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Micro-interactions */
+.interactive-element {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-element:hover {
+  transform: translateY(-4px) scale(1.02);
+  filter: brightness(1.1);
+}
+
+.success-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

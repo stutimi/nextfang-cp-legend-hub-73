@@ -14,6 +14,9 @@ import { Chatbot } from "@/components/Chatbot";
 import { VisitorStats } from "@/components/VisitorStats";
 import { CPAwarenessSection } from "@/components/CPAwarenessSection";
 import { CompanyShowcase } from "@/components/CompanyShowcase";
+import { FloatingAIMentor } from "@/components/FloatingAIMentor";
+import { SkillAssessment } from "@/components/SkillAssessment";
+import { LiveCodingPreview } from "@/components/LiveCodingPreview";
 
 const Index = () => {
   return (
@@ -27,6 +30,10 @@ const Index = () => {
       <VisitorStats />
       
       <CompanyShowcase />
+      
+      <LiveCodingPreview />
+      
+      <SkillAssessment />
       
       <div className="container mx-auto px-4 py-12 space-y-16">
         <section id="features" className="scroll-mt-20">
@@ -141,7 +148,7 @@ const Index = () => {
                 <CardContent>
                   <div className="mb-4 p-3 bg-gradient-to-r from-blue-50/10 to-blue-100/10 rounded-lg border border-blue-200/20">
                     <h4 className="font-medium text-sm mb-2 text-blue-300">Featured: "Dynamic Programming"</h4>
-                    <p className="text-xs text-muted-foreground mb-2">Method for solving complex problems by breaking them...</p>
+                    <p className="text-xs text-muted-foreground mb-2">Method for solving complex problems by...</p>
                     <div className="text-xs text-blue-400 hover:underline cursor-pointer">Learn more →</div>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
@@ -269,9 +276,6 @@ const Index = () => {
         <section id="roadmap">
           <DSASection />
         </section>
-        <section id="demo">
-          <CPSection />
-        </section>
         
         <CPAwarenessSection />
         
@@ -309,6 +313,8 @@ const Index = () => {
       <div data-chatbot>
         <Chatbot />
       </div>
+      
+      <FloatingAIMentor />
     </div>
   );
 };
