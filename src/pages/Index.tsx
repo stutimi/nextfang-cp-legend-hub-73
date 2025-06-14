@@ -10,11 +10,11 @@ import { DSASection } from "@/components/DSASection";
 import { CPSection } from "@/components/CPSection";
 import { CommunitySection } from "@/components/CommunitySection";
 import { ContactForm } from "@/components/ContactForm";
-import { Chatbot } from "@/components/Chatbot";
+import { EnhancedChatbot } from "@/components/EnhancedChatbot";
 import { VisitorStats } from "@/components/VisitorStats";
 import { CPAwarenessSection } from "@/components/CPAwarenessSection";
 import { CompanyShowcase } from "@/components/CompanyShowcase";
-import { FloatingAIMentor } from "@/components/FloatingAIMentor";
+import { EnhancedAIMentor } from "@/components/EnhancedAIMentor";
 import { SkillAssessment } from "@/components/SkillAssessment";
 import { LiveCodingPreview } from "@/components/LiveCodingPreview";
 
@@ -46,7 +46,7 @@ const Index = () => {
               Smart Tools for Smart Students
             </h2>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-              Experience the power of <strong className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">NEXTFAANG's</strong> comprehensive learning ecosystem
+              Experience the power of <strong className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">NEXTFAANG's</strong> comprehensive learning ecosystem - Building India's First LGM
             </p>
           </div>
 
@@ -311,10 +311,10 @@ const Index = () => {
       </div>
       
       <div data-chatbot>
-        <Chatbot />
+        <EnhancedChatbot />
       </div>
       
-      <FloatingAIMentor />
+      <EnhancedAIMentor />
     </div>
   );
 };
