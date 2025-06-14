@@ -10,37 +10,86 @@ export const CompanyShowcase = () => {
       image: "https://i.postimg.cc/rp3Jv16N/google-head-office-campus-mountain-view-californias-usa-E94-EK8.jpg",
       alt: "Google Campus",
       description: "Leading tech innovation",
-      color: "from-blue-500 to-green-500"
+      color: "from-blue-500 to-green-500",
+      shape: "rectangle"
     },
     {
       name: "Apple",
       image: "https://i.postimg.cc/Y9t92Vwr/apple-store.jpg",
       alt: "Apple Store",
       description: "Design excellence",
-      color: "from-gray-500 to-slate-600"
+      color: "from-gray-500 to-slate-600",
+      shape: "square"
     },
     {
       name: "Meta",
       image: "https://i.postimg.cc/xTXZ83YM/Meta-Completes-Another-Round-of-Layoffs.webp",
       alt: "Meta Office",
       description: "Social innovation",
-      color: "from-blue-600 to-purple-600"
+      color: "from-blue-600 to-purple-600",
+      shape: "circle"
     },
     {
-      name: "Tech Industry",
+      name: "ICPC Champions",
+      image: "https://i.postimg.cc/fyC5gkxc/2021-ICPC-World-Champions.jpg",
+      alt: "ICPC World Champions",
+      description: "Programming excellence",
+      color: "from-yellow-500 to-orange-500",
+      shape: "square"
+    },
+    {
+      name: "IOI Competition",
+      image: "https://i.postimg.cc/Gmx747B7/IOI-2023-1.webp",
+      alt: "IOI 2023",
+      description: "Global programming olympiad",
+      color: "from-green-500 to-emerald-500",
+      shape: "circle"
+    },
+    {
+      name: "CP Excellence",
+      image: "https://i.postimg.cc/Bbz4DZXg/ce9fedd7b042038f4b5a597ab8f52d45.jpg",
+      alt: "Competitive Programming Contest",
+      description: "Competitive programming mastery",
+      color: "from-red-500 to-pink-500",
+      shape: "rectangle"
+    },
+    {
+      name: "Tech Innovation",
       image: "https://i.postimg.cc/XYh1bSd5/maxresdefault.jpg",
       alt: "Tech Industry",
       description: "Future of technology",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      shape: "square"
     },
     {
       name: "Innovation Hub",
       image: "https://i.postimg.cc/gkpwkN3B/maxresdefault-1.jpg",
       alt: "Innovation Hub",
       description: "Next-gen solutions",
-      color: "from-cyan-500 to-blue-500"
+      color: "from-cyan-500 to-blue-500",
+      shape: "rectangle"
+    },
+    {
+      name: "Programming Contest",
+      image: "https://i.postimg.cc/wv8p94nW/45227950-2137472146284962-8222995478405447680-n.jpg",
+      alt: "Programming Competition",
+      description: "Competitive spirit",
+      color: "from-indigo-500 to-purple-500",
+      shape: "circle"
     }
   ];
+
+  const getImageClasses = (shape: string) => {
+    switch (shape) {
+      case 'circle':
+        return 'aspect-square rounded-full';
+      case 'square':
+        return 'aspect-square rounded-2xl';
+      case 'rectangle':
+      default:
+        return 'aspect-video rounded-2xl';
+    }
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
@@ -55,19 +104,19 @@ export const CompanyShowcase = () => {
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-6 gap-2 bg-blue-900/50 border-blue-400/30 text-blue-300 hover:bg-blue-800/60 backdrop-blur-sm animate-fade-in">
             <Building2 className="h-4 w-4" />
-            Dream Companies
+            Dream Destinations
           </Badge>
           
           <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-cyan-300 bg-clip-text text-transparent animate-fade-in">
-            Where Our Students Land
+            Where <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">NEXTFAANG</span> Students Excel
           </h2>
           
           <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Join the ranks of our successful alumni working at the world's most prestigious tech companies
+            Join the ranks of our successful alumni working at the world's most prestigious tech companies and winning global programming competitions
           </p>
         </div>
 
-        {/* Company Grid */}
+        {/* Company Grid with Mixed Shapes */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {companies.map((company, index) => (
             <Card 
@@ -76,12 +125,14 @@ export const CompanyShowcase = () => {
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <CardContent className="p-0">
-                <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={company.image} 
-                    alt={company.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                <div className="relative overflow-hidden">
+                  <div className={`overflow-hidden ${getImageClasses(company.shape)}`}>
+                    <img 
+                      src={company.image} 
+                      alt={company.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                   
                   {/* Company Info Overlay */}

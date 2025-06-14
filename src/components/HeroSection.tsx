@@ -20,8 +20,41 @@ export const HeroSection = () => {
         <div className="spotlight-white absolute top-32 right-1/4 animate-pulse" style={{animationDelay: '1s'}}></div>
         <div className="spotlight-white absolute bottom-20 left-1/3 animate-pulse" style={{animationDelay: '2s'}}></div>
         
-        {/* Background company images */}
+        {/* Background company images with different shapes */}
         <div className="absolute inset-0 opacity-10">
+          {/* Square format images */}
+          <div className="absolute top-10 left-10 w-32 h-32 overflow-hidden animate-fade-in">
+            <img 
+              src="https://i.postimg.cc/Bbz4DZXg/ce9fedd7b042038f4b5a597ab8f52d45.jpg" 
+              alt="Competitive Programming Contest"
+              className="w-full h-full object-cover opacity-30"
+            />
+          </div>
+          <div className="absolute top-10 right-10 w-32 h-32 overflow-hidden animate-fade-in" style={{animationDelay: '0.5s'}}>
+            <img 
+              src="https://i.postimg.cc/fyC5gkxc/2021-ICPC-World-Champions.jpg" 
+              alt="ICPC World Champions"
+              className="w-full h-full object-cover opacity-30"
+            />
+          </div>
+
+          {/* Circular format images */}
+          <div className="absolute top-1/4 left-5 w-24 h-24 rounded-full overflow-hidden animate-fade-in" style={{animationDelay: '1s'}}>
+            <img 
+              src="https://i.postimg.cc/wv8p94nW/45227950-2137472146284962-8222995478405447680-n.jpg" 
+              alt="Programming Competition"
+              className="w-full h-full object-cover opacity-25"
+            />
+          </div>
+          <div className="absolute top-1/4 right-5 w-24 h-24 rounded-full overflow-hidden animate-fade-in" style={{animationDelay: '1.2s'}}>
+            <img 
+              src="https://i.postimg.cc/Gmx747B7/IOI-2023-1.webp" 
+              alt="IOI 2023"
+              className="w-full h-full object-cover opacity-25"
+            />
+          </div>
+
+          {/* Rectangle format images */}
           <img 
             src="https://i.postimg.cc/XYh1bSd5/maxresdefault.jpg" 
             alt="Tech Background"
@@ -45,6 +78,12 @@ export const HeroSection = () => {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/4 h-1/4 object-cover opacity-15 rounded-2xl animate-fade-in"
             style={{animationDelay: '1.5s'}}
           />
+          <img 
+            src="https://i.postimg.cc/gkpwkN3B/maxresdefault-1.jpg" 
+            alt="Innovation Hub"
+            className="absolute bottom-10 right-20 w-40 h-24 object-cover opacity-20 rounded-xl animate-fade-in"
+            style={{animationDelay: '2s'}}
+          />
         </div>
 
         {/* Enhanced 3D Floating Elements with White Glow */}
@@ -60,7 +99,7 @@ export const HeroSection = () => {
             <Badge variant="secondary" className="mb-6 gap-3 card-3d pulse-glow-white text-lg px-8 py-4 animate-scale-in">
               <img 
                 src="https://i.postimg.cc/4NLSdfjB/cedf0ef6-a561-4074-aa6b-8993a0ba5baa.png" 
-                alt="NEXTFANG Logo"
+                alt="NEXTFAANG Logo"
                 className="h-8 w-8 rounded-full animate-pulse"
               />
               <Star className="h-5 w-5 animate-pulse" />
@@ -68,14 +107,14 @@ export const HeroSection = () => {
             </Badge>
           </div>
 
-          {/* Catchy and Concise Headline */}
+          {/* Catchy and Concise Headline with NEXTFAANG branding */}
           <h1 className="text-4xl md:text-7xl font-bold mb-6 text-gradient slide-in-up leading-tight white-text-shadow animate-fade-in">
-            <span className="inline-block animate-scale-in">Empowering Students to</span>
+            <span className="inline-block animate-scale-in">Welcome to</span>
             <br />
-            <span className="inline-block animate-scale-in" style={{animationDelay: '0.2s'}}>Master CP & DSA</span>
+            <span className="inline-block animate-scale-in bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent" style={{animationDelay: '0.2s'}}>NEXTFAANG</span>
             <br />
-            <span className="relative inline-block animate-scale-in" style={{animationDelay: '0.4s'}}>
-              <span className="blue-gradient">Crack Your Dream Job</span>
+            <span className="relative inline-block animate-scale-in text-3xl md:text-5xl" style={{animationDelay: '0.4s'}}>
+              <span className="blue-gradient">Master CP & DSA to Crack FAANG</span>
               <div className="absolute -top-4 -right-4">
                 <Rocket className="h-12 w-12 text-accent float-animation white-glow animate-pulse" />
               </div>
@@ -131,7 +170,7 @@ export const HeroSection = () => {
                       <Play className="h-20 w-20 text-primary mx-auto animate-pulse white-glow" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4 white-text-shadow">
-                      See NEXTFANG in Action
+                      See NEXTFAANG in Action
                     </h3>
                     <p className="text-white/80 mb-6 max-w-2xl mx-auto">
                       Watch how we help students master competitive programming and crack their dream companies in just 2 minutes
@@ -155,7 +194,7 @@ export const HeroSection = () => {
             </div>
             <div className="card-3d glass-morphism p-6 rounded-2xl white-glow hover:scale-105 transition-transform duration-300">
               <div className="text-3xl font-bold text-secondary mb-2 white-text-shadow">150+</div>
-              <div className="text-muted-foreground">FANG Placements</div>
+              <div className="text-muted-foreground">FAANG Placements</div>
             </div>
             <div className="card-3d glass-morphism p-6 rounded-2xl white-glow hover:scale-105 transition-transform duration-300">
               <div className="text-3xl font-bold text-accent mb-2 white-text-shadow">98%</div>

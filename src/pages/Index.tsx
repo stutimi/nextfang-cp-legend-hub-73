@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -40,7 +39,7 @@ const Index = () => {
               Smart Tools for Smart Students
             </h2>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-              Experience the power of <strong className="bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">NEXTFANG</strong> comprehensive learning ecosystem
+              Experience the power of <strong className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">NEXTFAANG's</strong> comprehensive learning ecosystem
             </p>
           </div>
 
