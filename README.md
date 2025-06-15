@@ -85,8 +85,26 @@ CP REsorces Hub
 Practice Mode
 <a href="https://ibb.co/HDwn7rpd"><img src="https://i.ibb.co/pvVJ23ry/Screenshot-2025-06-14-105841.png" alt="Screenshot-2025-06-14-105841" border="0"></a>
 
+Resorces
+<a href="https://ibb.co/mV3V0FC7"><img src="https://i.ibb.co/cSjSwXcd/Screenshot-2025-06-14-105856.png" alt="Screenshot-2025-06-14-105856" border="0"></a>
 
+Platform Guide
+<a href="https://ibb.co/zTgGmTcL"><img src="https://i.ibb.co/dwvGfw93/Screenshot-2025-06-14-110008.png" alt="Screenshot-2025-06-14-110008" border="0"></a>
 
+NextFAANG tools and AI Setup
+<a href="https://ibb.co/mCwKfXqG"><img src="https://i.ibb.co/tMt6Vxs4/Screenshot-2025-06-14-110109.png" alt="Screenshot-2025-06-14-110109" border="0"></a>
+
+Contest Performer Analyser
+<a href="https://ibb.co/mCxPnygM"><img src="https://i.ibb.co/hRqTGdwt/Screenshot-2025-06-14-110123.png" alt="Screenshot-2025-06-14-110123" border="0"></a>
+
+CP Dictionary
+<a href="https://ibb.co/BKr1d75P"><img src="https://i.ibb.co/cXCmMpSv/Screenshot-2025-06-14-110141.png" alt="Screenshot-2025-06-14-110141" border="0"></a>
+
+CP Tricks And Tips
+<a href="https://ibb.co/bgGMXfVs"><img src="https://i.ibb.co/ynxcq3C6/Screenshot-2025-06-14-110206.png" alt="Screenshot-2025-06-14-110206" border="0"></a>
+
+DSA Mastery
+<a href="https://ibb.co/mF1TZd7M"><img src="https://i.ibb.co/LhbRjBf2/Screenshot-2025-06-14-110252.png" alt="Screenshot-2025-06-14-110252" border="0"></a>
 
 
 ## 📁 Folder Structure
