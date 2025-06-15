@@ -129,14 +129,7 @@ Edit
 
 ## ⚙️ How Can I Edit This Code?
 
-### ✨ Option 1: Use Lovable
-
-Just visit the [Lovable Project](https://lovable.dev/projects/0aa7af2e-318b-4b38-9fea-5d634e70a97a) and start editing via prompts.  
-Changes made here will automatically commit to your repo.
-
----
-
-### 💻 Option 2: Use Your Own IDE
+### 💻 Option : Use Your Own IDE
 
 Make changes locally using VS Code or any preferred editor.
 
