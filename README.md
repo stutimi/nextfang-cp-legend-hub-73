@@ -1,6 +1,6 @@
 # 🧠 NEXTFAANG: CP Legend Hub
 
-Welcome to your Lovable project! This is a competitive programming and DSA learning platform designed for both CS and non-CS students. The goal is to empower students to crack tech interviews and master CP through structured learning, performance analysis, and curated content.
+Welcome to the project! This is a competitive programming and DSA learning platform designed for both CS and non-CS students. The goal is to empower students to crack tech interviews and master CP through structured learning, performance analysis, and curated content.
 
 ---
 
