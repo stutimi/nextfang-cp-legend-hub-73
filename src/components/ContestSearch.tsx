@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useToast } from "@/hooks/use-toast";
-import { Calendar, Clock, Trophy, AlertTriangle } from "lucide-react";
+import { Calendar, Clock, Trophy, AlertTriangle, RefreshCw } from "lucide-react";
 
 interface Contest {
   id: number;
@@ -66,41 +66,74 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
     }
   }, [handle]);
 
+  const makeCodeforcesRequest = async (endpoint: string) => {
+    // Using a CORS proxy to access Codeforces API
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    const codeforcesUrl = `https://codeforces.com/api/${endpoint}`;
+    const fullUrl = proxyUrl + encodeURIComponent(codeforcesUrl);
+    
+    try {
+      const response = await fetch(fullUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('API request failed:', error);
+      throw error;
+    }
+  };
+
   const fetchUserContests = async () => {
     setIsLoading(true);
     try {
-      // Fetch user's contest list
-      const contestsResponse = await fetch(`https://codeforces.com/api/user.rating?handle=${handle}`);
-      const contestsData = await contestsResponse.json();
+      // First, verify the user exists
+      const userInfoData = await makeCodeforcesRequest(`user.info?handles=${handle}`);
       
-      if (contestsData.status !== "OK") {
-        throw new Error(contestsData.comment || "Failed to fetch contests");
+      if (userInfoData.status !== "OK") {
+        throw new Error(userInfoData.comment || "User not found");
       }
 
-      // Get recent contests (last 10)
-      const recentContests = contestsData.result.slice(-10).reverse();
-      setContests(recentContests.map((rating: any) => ({
+      // Get user's rating changes (contest history)
+      const ratingData = await makeCodeforcesRequest(`user.rating?handle=${handle}`);
+      
+      if (ratingData.status !== "OK") {
+        throw new Error(ratingData.comment || "Failed to fetch contest history");
+      }
+
+      // Get recent contests (last 15)
+      const recentContests = ratingData.result.slice(-15).reverse();
+      
+      // Format contests for display
+      const formattedContests = recentContests.map((rating: any) => ({
         id: rating.contestId,
         name: rating.contestName,
-        type: "Unknown",
+        type: "Rated",
         phase: "FINISHED",
         frozen: false,
         durationSeconds: 7200, // Default 2 hours
         startTimeSeconds: rating.ratingUpdateTimeSeconds,
-        relativeTimeSeconds: 0
-      })));
+        relativeTimeSeconds: 0,
+        rank: rating.rank,
+        oldRating: rating.oldRating,
+        newRating: rating.newRating
+      }));
+
+      setContests(formattedContests);
 
       toast({
         title: "Success!",
-        description: `Found ${recentContests.length} recent contests for ${handle}`,
+        description: `Found ${formattedContests.length} recent contests for ${handle}`,
       });
     } catch (error) {
       console.error("Error fetching contests:", error);
       toast({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to fetch contest data",
+        description: error instanceof Error ? error.message : "Failed to fetch contest data. Please check if the handle is correct.",
         variant: "destructive",
       });
+      setContests([]);
     } finally {
       setIsLoading(false);
     }
@@ -112,10 +145,7 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
     
     try {
       // Fetch submissions for the specific contest
-      const submissionsResponse = await fetch(
-        `https://codeforces.com/api/contest.status?contestId=${contest.id}&handle=${handle}`
-      );
-      const submissionsData = await submissionsResponse.json();
+      const submissionsData = await makeCodeforcesRequest(`contest.status?contestId=${contest.id}&handle=${handle}`);
       
       if (submissionsData.status !== "OK") {
         throw new Error(submissionsData.comment || "Failed to fetch submissions");
@@ -136,8 +166,8 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
     } catch (error) {
       console.error("Error analyzing contest:", error);
       toast({
-        title: "Error",
-        description: error instanceof Error ? error.message : "Failed to analyze contest",
+        title: "Analysis Error",
+        description: error instanceof Error ? error.message : "Failed to analyze contest. The contest might be too old or have no submissions.",
         variant: "destructive",
       });
     } finally {
@@ -149,7 +179,6 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
     const problemMap = new Map();
     const solvedProblems = new Set();
     const struggledProblems = [];
-    const skippedProblems = new Set();
     
     // Group submissions by problem
     submissions.forEach(submission => {
@@ -228,8 +257,17 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
       case "WRONG_ANSWER": return "bg-red-500";
       case "TIME_LIMIT_EXCEEDED": return "bg-yellow-500";
       case "RUNTIME_ERROR": return "bg-orange-500";
+      case "COMPILATION_ERROR": return "bg-purple-500";
       default: return "bg-gray-500";
     }
+  };
+
+  const getRatingChange = (contest: any) => {
+    if (contest.newRating && contest.oldRating) {
+      const change = contest.newRating - contest.oldRating;
+      return change > 0 ? `+${change}` : `${change}`;
+    }
+    return null;
   };
 
   return (
@@ -247,13 +285,16 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
         </CardHeader>
         <CardContent>
           {isLoading && !selectedContest ? (
-            <div className="text-center py-8">Loading contests...</div>
+            <div className="text-center py-8 flex items-center justify-center gap-2">
+              <RefreshCw className="h-4 w-4 animate-spin" />
+              Loading contests...
+            </div>
           ) : contests.length > 0 ? (
             <div className="grid gap-3">
-              {contests.map((contest) => (
+              {contests.map((contest: any) => (
                 <div
                   key={contest.id}
-                  className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 cursor-pointer"
+                  className="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
                   onClick={() => analyzeContest(contest)}
                 >
                   <div className="flex-1">
@@ -264,17 +305,31 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
                         {new Date(contest.startTimeSeconds * 1000).toLocaleDateString()}
                       </span>
                       <Badge variant="outline">Contest #{contest.id}</Badge>
+                      {contest.rank && (
+                        <Badge variant="secondary">Rank: {contest.rank}</Badge>
+                      )}
+                      {getRatingChange(contest) && (
+                        <Badge 
+                          className={`${contest.newRating > contest.oldRating ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}
+                        >
+                          {getRatingChange(contest)}
+                        </Badge>
+                      )}
                     </div>
                   </div>
                   <Button variant="outline" size="sm">
-                    Analyze
+                    {isLoading && selectedContest?.id === contest.id ? (
+                      <RefreshCw className="h-4 w-4 animate-spin" />
+                    ) : (
+                      "Analyze"
+                    )}
                   </Button>
                 </div>
               ))}
             </div>
           ) : (
             <div className="text-center py-8 text-muted-foreground">
-              No recent contests found for this handle
+              {handle ? "No recent contests found for this handle" : "Enter a handle to view contests"}
             </div>
           )}
         </CardContent>
@@ -320,60 +375,66 @@ export const ContestSearch = ({ handle, onAnalysisComplete }: ContestSearchProps
             {/* Problem Breakdown */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Problem Breakdown</h3>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Problem</TableHead>
-                    <TableHead>Tags</TableHead>
-                    <TableHead>Attempts</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Time Spent</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {analysisResults.problemBreakdown.map((problem: any, index: number) => (
-                    <TableRow key={index}>
-                      <TableCell>
-                        <div>
-                          <div className="font-medium">
-                            {problem.problem.index}. {problem.problem.name}
-                          </div>
-                          {problem.problem.rating && (
-                            <div className="text-sm text-muted-foreground">
-                              Rating: {problem.problem.rating}
-                            </div>
-                          )}
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <div className="flex flex-wrap gap-1">
-                          {problem.problem.tags.slice(0, 3).map((tag: string) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                          {problem.problem.tags.length > 3 && (
-                            <Badge variant="outline" className="text-xs">
-                              +{problem.problem.tags.length - 3}
-                            </Badge>
-                          )}
-                        </div>
-                      </TableCell>
-                      <TableCell>{problem.attempts}</TableCell>
-                      <TableCell>
-                        <Badge 
-                          className={`text-white ${problem.solved ? 'bg-green-500' : 'bg-red-500'}`}
-                        >
-                          {problem.solved ? 'Solved' : 'Unsolved'}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        {problem.solved ? formatTime(problem.timeSpent) : '-'}
-                      </TableCell>
+              {analysisResults.problemBreakdown.length > 0 ? (
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Problem</TableHead>
+                      <TableHead>Tags</TableHead>
+                      <TableHead>Attempts</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead>Time Spent</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                  </TableHeader>
+                  <TableBody>
+                    {analysisResults.problemBreakdown.map((problem: any, index: number) => (
+                      <TableRow key={index}>
+                        <TableCell>
+                          <div>
+                            <div className="font-medium">
+                              {problem.problem.index}. {problem.problem.name}
+                            </div>
+                            {problem.problem.rating && (
+                              <div className="text-sm text-muted-foreground">
+                                Rating: {problem.problem.rating}
+                              </div>
+                            )}
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <div className="flex flex-wrap gap-1">
+                            {problem.problem.tags.slice(0, 3).map((tag: string) => (
+                              <Badge key={tag} variant="secondary" className="text-xs">
+                                {tag}
+                              </Badge>
+                            ))}
+                            {problem.problem.tags.length > 3 && (
+                              <Badge variant="outline" className="text-xs">
+                                +{problem.problem.tags.length - 3}
+                              </Badge>
+                            )}
+                          </div>
+                        </TableCell>
+                        <TableCell>{problem.attempts}</TableCell>
+                        <TableCell>
+                          <Badge 
+                            className={`text-white ${problem.solved ? 'bg-green-500' : 'bg-red-500'}`}
+                          >
+                            {problem.solved ? 'Solved' : 'Unsolved'}
+                          </Badge>
+                        </TableCell>
+                        <TableCell>
+                          {problem.solved ? formatTime(problem.timeSpent) : '-'}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              ) : (
+                <div className="text-center py-4 text-muted-foreground">
+                  No submissions found for this contest
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
