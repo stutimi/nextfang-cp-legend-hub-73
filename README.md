@@ -6,7 +6,7 @@ Welcome to the project! This is a competitive programming and DSA learning platf
 
 ## 🌐 Project Info
 
-**Live Demo**: [NEXTFAANG Platform](https://nextfang-alok-kumars-projects-211675ca.vercel.app/)
+**Live Demo**: [NEXTFAANG Platform](https://nextfang.vercel.app/)
 
 ---
 
