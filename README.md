@@ -25,14 +25,17 @@ Welcome to the project! This is a competitive programming and DSA learning platf
     <li><strong>🤝 Community & Mentorship:</strong> Space for discussions, peer support, and mentorship.</li>
     <li><strong>🗓️ Event Manager:</strong> Plan and manage contests, webinars, and workshops.</li>
     <li><strong>🧾 AI Resume Builder:</strong> Auto-generate resumes based on user profile and goals.</li>
+    <li><strong>🗣️ Voice Chatbot Support:</strong> Chatbot to guide users using voice and natural language queries.</li>
+    <li><strong>🤖 AI Platform Guide:</strong> Personalized walkthroughs and suggestions using an AI-powered assistant.</li>
   </ul>
 
   <h3>🧪 Coming Soon</h3>
   <ul>
-    <li><strong>🧮 Problem Analyzer:</strong> Topic-wise insights and improvement tracking</li>
-    <li><strong>👨‍💻 Built-in Compiler:</strong> Run code directly on the platform</li>
+    <li><strong>🧮 Problem Analyzer:</strong> Topic-wise insights and improvement tracking.</li>
+    <li><strong>👨‍💻 Built-in Compiler:</strong> Run code directly on the platform.</li>
   </ul>
 </section>
+
 
 ## 🛠️ Tech Stack
 
