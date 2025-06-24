@@ -10,17 +10,48 @@ Welcome to the project! This is a competitive programming and DSA learning platf
 
 ---
 
-## 🧩 Features
+*🌐 Key Features
+📍 CP vs DSA Visual Roadmap
+An interactive, side-by-side roadmap to help students understand, track, and master both CP and DSA paths at their own pace.
 
-- 📍 CP vs DSA roadmap with visual progress
-- 📊 Dynamic performance charts and personalized suggestions
-- 🧠 Interview prep with real-world coding scenarios
-- 📝 Blogs, tips, and career guidance
-- 🔔 Notifications and productivity reminders
-- 📱 Fully responsive UI with smooth animations
-- ⚙️ Ongoing feature development and improvements
+📊 Dynamic Progress Analytics
+Real-time, data-driven charts to visualize coding milestones, growth trends, and individual strengths/weaknesses.
 
----
+🧠 Interview Prep + Real-World Scenarios
+Curated coding interview questions, mock assessments, and scenario-based practice aligned with placement preparation.
+
+📝 Blogs, Tips & Career Guidance
+Curated resources, community blogs, and actionable strategies to help users grow in their tech careers and land dream roles.
+
+🔔 Smart Notifications & Productivity Tools
+In-app reminders and daily nudges to boost consistency, focus, and learning momentum.
+
+📱 Fully Responsive Design
+Modern, mobile-friendly UI powered by Tailwind CSS and Framer Motion for sleek transitions and a delightful UX.
+
+⚙️ Continuous Development
+We’re actively building and shipping new features with user feedback in mind — the platform keeps evolving.
+
+📚 In-Depth Documentation
+Step-by-step guides and tech stack documentation make onboarding and contribution easy for every user and developer.
+
+💻 Coding Practice Arena
+A dedicated space for solving DSA problems and CP challenges to strengthen problem-solving skills.
+
+🤝 Community & Mentorship
+Interactive space for peer discussions, mentorship, and collaboration — fostering a strong support system.
+
+🗓️ Event Manager
+Organize and participate in webinars, contests, bootcamps, and workshops with built-in planning tools.
+
+🧾 AI-Powered Resume Builder
+Automated resume generator that uses user data (skills, achievements, goals) to create job-ready resumes instantly.
+
+🧪 Coming Soon:
+🧮 Problem Analyzer: Visual analysis of problem-solving patterns, weak areas, and topic-wise mastery.
+
+👨‍💻 Built-in Coding Compiler: Practice and test code directly on the platform — no external tools needed
+**
 
 ## 🛠️ Tech Stack
 
