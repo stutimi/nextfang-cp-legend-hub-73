@@ -59,6 +59,27 @@ Welcome to the project! This is a competitive programming and DSA learning platf
 - 🔐 Zod (schema validation)
 - 🔔 Sonner (toast notifications)
 - 🕒 date-fns (time formatting)
+  
+<section>
+  <h2>🚀 Deploying on Vercel</h2>
+  <p>
+    Deploying <strong>NextFang</strong> on <a href="https://vercel.com" target="_blank">Vercel</a> is fast and beginner-friendly.
+  </p>
+  <ol>
+    <li>📌 Push your code to a public/private <strong>GitHub</strong> repository.</li>
+    <li>🔗 Go to <a href="https://vercel.com" target="_blank">vercel.com</a> and log in via GitHub.</li>
+    <li>➕ Click <strong>"Add New Project"</strong> and select your repo (e.g., <code>nextfang-cp</code>).</li>
+    <li>⚙️ Vercel auto-detects your framework and sets up build commands (customizable).</li>
+    <li>🚀 Click <strong>"Deploy"</strong> — your app goes live at <code>https://nextfang-cp.vercel.app</code>.</li>
+  </ol>
+
+  <h3>✅ Pro Tips</h3>
+  <ul>
+    <li>🌐 Add a <strong>custom domain</strong> via project settings.</li>
+    <li>🔁 Enable <strong>auto-redeploy</strong> on every GitHub push.</li>
+    <li>📊 Monitor performance with <strong>Vercel Analytics</strong>.</li>
+  </ul>
+</section>
 
 ---
 Website Overview
