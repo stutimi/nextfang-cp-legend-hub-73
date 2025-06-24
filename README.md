@@ -10,48 +10,29 @@ Welcome to the project! This is a competitive programming and DSA learning platf
 
 ---
 
-*🌐 Key Features
-📍 CP vs DSA Visual Roadmap
-An interactive, side-by-side roadmap to help students understand, track, and master both CP and DSA paths at their own pace.
+<section>
+  <h2>🌐 Key Features</h2>
+  <ul>
+    <li><strong>📍 CP vs DSA Visual Roadmap:</strong> Side-by-side interactive roadmap to master both CP and DSA.</li>
+    <li><strong>📊 Dynamic Progress Analytics:</strong> Track milestones and performance with real-time charts.</li>
+    <li><strong>🧠 Interview Prep & Mock Scenarios:</strong> Practice with curated questions and placement-ready challenges.</li>
+    <li><strong>📝 Blogs & Career Tips:</strong> Actionable guides, blogs, and strategies for tech careers.</li>
+    <li><strong>🔔 Smart Notifications:</strong> Stay consistent with learning via alerts and reminders.</li>
+    <li><strong>📱 Responsive UI:</strong> Tailwind + Framer Motion-based sleek, mobile-friendly design.</li>
+    <li><strong>⚙️ Ongoing Development:</strong> Constant updates with community-driven feature enhancements.</li>
+    <li><strong>📚 Comprehensive Docs:</strong> Easy-to-follow documentation for users and contributors.</li>
+    <li><strong>💻 Coding Practice Arena:</strong> Solve CP & DSA problems in a focused practice environment.</li>
+    <li><strong>🤝 Community & Mentorship:</strong> Space for discussions, peer support, and mentorship.</li>
+    <li><strong>🗓️ Event Manager:</strong> Plan and manage contests, webinars, and workshops.</li>
+    <li><strong>🧾 AI Resume Builder:</strong> Auto-generate resumes based on user profile and goals.</li>
+  </ul>
 
-📊 Dynamic Progress Analytics
-Real-time, data-driven charts to visualize coding milestones, growth trends, and individual strengths/weaknesses.
-
-🧠 Interview Prep + Real-World Scenarios
-Curated coding interview questions, mock assessments, and scenario-based practice aligned with placement preparation.
-
-📝 Blogs, Tips & Career Guidance
-Curated resources, community blogs, and actionable strategies to help users grow in their tech careers and land dream roles.
-
-🔔 Smart Notifications & Productivity Tools
-In-app reminders and daily nudges to boost consistency, focus, and learning momentum.
-
-📱 Fully Responsive Design
-Modern, mobile-friendly UI powered by Tailwind CSS and Framer Motion for sleek transitions and a delightful UX.
-
-⚙️ Continuous Development
-We’re actively building and shipping new features with user feedback in mind — the platform keeps evolving.
-
-📚 In-Depth Documentation
-Step-by-step guides and tech stack documentation make onboarding and contribution easy for every user and developer.
-
-💻 Coding Practice Arena
-A dedicated space for solving DSA problems and CP challenges to strengthen problem-solving skills.
-
-🤝 Community & Mentorship
-Interactive space for peer discussions, mentorship, and collaboration — fostering a strong support system.
-
-🗓️ Event Manager
-Organize and participate in webinars, contests, bootcamps, and workshops with built-in planning tools.
-
-🧾 AI-Powered Resume Builder
-Automated resume generator that uses user data (skills, achievements, goals) to create job-ready resumes instantly.
-
-🧪 Coming Soon:
-🧮 Problem Analyzer: Visual analysis of problem-solving patterns, weak areas, and topic-wise mastery.
-
-👨‍💻 Built-in Coding Compiler: Practice and test code directly on the platform — no external tools needed
-**
+  <h3>🧪 Coming Soon</h3>
+  <ul>
+    <li><strong>🧮 Problem Analyzer:</strong> Topic-wise insights and improvement tracking</li>
+    <li><strong>👨‍💻 Built-in Compiler:</strong> Run code directly on the platform</li>
+  </ul>
+</section>
 
 ## 🛠️ Tech Stack
 
